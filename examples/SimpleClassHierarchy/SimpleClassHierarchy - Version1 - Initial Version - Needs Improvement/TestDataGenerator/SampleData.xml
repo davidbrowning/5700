@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfThingABob xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ThingABob xsi:type="Gadget">
+    <Id>50</Id>
+    <Cost>10.99</Cost>
+    <Length>3</Length>
+    <Width>4</Width>
+  </ThingABob>
+  <ThingABob xsi:type="Widget">
+    <Id>51</Id>
+    <Weight>20.5</Weight>
+  </ThingABob>
+  <ThingABob xsi:type="Gadget">
+    <Id>52</Id>
+    <Cost>12.99</Cost>
+    <Length>4</Length>
+    <Width>4</Width>
+  </ThingABob>
+  <ThingABob xsi:type="Widget">
+    <Id>53</Id>
+    <Weight>30.55</Weight>
+  </ThingABob>
+  <ThingABob xsi:type="Widget">
+    <Id>54</Id>
+    <Weight>50.25</Weight>
+  </ThingABob>
+  <ThingABob xsi:type="Widget">
+    <Id>55</Id>
+    <Weight>60.19</Weight>
+  </ThingABob>
+</ArrayOfThingABob>
