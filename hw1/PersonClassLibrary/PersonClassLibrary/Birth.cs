@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 namespace PersonClassLibrary
 {
     [DataContract]
-    class Birth : Person
+    abstract class Birth 
     {
         [DataMember]
         private int Year { get; set; }

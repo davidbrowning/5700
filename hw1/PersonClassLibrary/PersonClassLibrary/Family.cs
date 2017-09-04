@@ -8,13 +8,13 @@ using System.Runtime.Serialization;
 namespace PersonClassLibrary
 {
     [DataContract]
-    class Family
+    abstract class Family
     {
         [DataMember]
         private Person Mother {set; get;}
         [DataMember]
         private Person Father {set; get;}
         [DataMember]
-        private List<Person> Syblings {set; get;}
+        private List<Person> Siblings {set; get;}
     }
 }

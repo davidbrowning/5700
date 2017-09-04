@@ -9,7 +9,7 @@ using System.Runtime.Serialization;
 namespace PersonClassLibrary
 {
     [DataContract]
-    class Name : Person
+    abstract class Name 
     {
         [DataMember]
         private string First { get; set; }

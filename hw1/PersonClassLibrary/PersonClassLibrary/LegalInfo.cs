@@ -9,7 +9,7 @@ namespace PersonClassLibrary
 {
     [DataContract]
 
-    class LegalInfo : Person
+    abstract class LegalInfo 
     {
         [DataMember]
         private string Ssn { get; set; }
