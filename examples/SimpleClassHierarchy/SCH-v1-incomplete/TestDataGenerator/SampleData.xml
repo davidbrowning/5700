@@ -5,6 +5,8 @@
     <Cost>10.99</Cost>
     <Length>3</Length>
     <Width>4</Width>
+    <Height>0</Height>
+    <Stuff>0</Stuff>
   </ThingABob>
   <ThingABob xsi:type="Widget">
     <Id>51</Id>
@@ -15,6 +17,8 @@
     <Cost>12.99</Cost>
     <Length>4</Length>
     <Width>4</Width>
+    <Height>0</Height>
+    <Stuff>0</Stuff>
   </ThingABob>
   <ThingABob xsi:type="Widget">
     <Id>53</Id>

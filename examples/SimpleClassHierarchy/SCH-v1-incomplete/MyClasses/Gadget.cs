@@ -11,5 +11,9 @@ namespace MyClasses
         public int Length { get; set; }
         [DataMember]
         public int Width { get; set; }
+        [DataMember]
+        public int Height { get; set; }
+        [DataMember]
+        public int Stuff { get; set; }
     }
 }
