@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyClasses", "MyClasses\MyClasses.csproj", "{E0D3C49C-0DD1-4BF4-B81D-3C43201E2C16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDataGenerator", "TestDataGenerator\TestDataGenerator.csproj", "{39F4AA3F-70F6-45A1-8651-A95462B82CF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThingABobGenerator", "ThingABobGenerator\ThingABobGenerator.csproj", "{39F4AA3F-70F6-45A1-8651-A95462B82CF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

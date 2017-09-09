@@ -11,14 +11,42 @@ namespace PersonClassLibrary
     public class Person
     {
         [DataMember]
-        private string ObjectId { get; set; }
+        public int ObjectId { get; set; }
         [DataMember]
-        private Birth _birth;
+        public string StateFileNumber { get; set; }
         [DataMember]
-        private Family _family;
+        public string SocialSecurityNumber { get; set; }
         [DataMember]
-        private LegalInfo _legalinfo;
+        public string FirstName { get; set; }
         [DataMember]
-        private Name _name;
+        public string MiddleName { get; set; }
+        [DataMember]
+        public string LastName { get; set; }
+        [DataMember]
+        public int BirthYear { get; set; }
+        [DataMember]
+        public int BirthMonth { get; set; }
+        [DataMember]
+        public int BirthDay { get; set; }
+        [DataMember]
+        public string Gender { get; set; }
+        [DataMember]
+        public string NewbornScreeningNumber { get; set; }
+        [DataMember]
+        public string IsPartOfMultipleBirth { get; set; }
+        [DataMember]
+        public int BirthOrder { get; set; }
+        [DataMember]
+        public string BirthCounty { get; set; }
+        [DataMember]
+        public string MothersFirstName { get; set; }
+        [DataMember]
+        public string MothersMiddleName { get; set; }
+        [DataMember]
+        public string MothersLastName { get; set; }
+        [DataMember]
+        public string Phone1 { get; set; }
+        [DataMember]
+        public string Phone2 { get; set; }
     }
 }

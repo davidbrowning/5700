@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using System.IO;
-
-namespace PersonClassLibrary
+namespace MyClasses
 {
-    public class PersonCollection : List<Person>
+    public class ThingABobCollection : List<ThingABob>
     {
-        public Serializer MySerializer { get; set; }
+        public ImporterExporter MyImporterExporter { get; set; }
         public string MyDataFile { get; set; }
 
         public void PrintCollection(string header)
@@ -15,20 +13,21 @@ namespace PersonClassLibrary
             Console.WriteLine("");
             Console.WriteLine($"Number of {header} back in: {Count}");
 
-            foreach (Person person in this)
+            foreach (ThingABob thing in this)
             {
-                Console.WriteLine(person);
+                Console.WriteLine(thing);
             }
         }
 
         public void Write()
         {
-            MySerializer?.Write(this, MyDataFile);
+            MyImporterExporter?.Write(this, MyDataFile);
         }
 
         public void Read()
         {
-            MySerializer?.Read(this, MyDataFile);
+            MyImporterExporter?.Read(this, MyDataFile);
         }
+
     }
 }

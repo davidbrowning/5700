@@ -52,5 +52,11 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PersonClassLibrary\PersonClassLibrary.csproj">
+      <Project>{ebf0d813-cab7-448b-b117-65aac4b432a9}</Project>
+      <Name>PersonClassLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

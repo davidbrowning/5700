@@ -7,8 +7,8 @@
     <ProjectGuid>{39F4AA3F-70F6-45A1-8651-A95462B82CF3}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestDataGenerator</RootNamespace>
-    <AssemblyName>TestDataGenerator</AssemblyName>
+    <RootNamespace>ThingABobGenerator</RootNamespace>
+    <AssemblyName>ThingABobGenerator</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
