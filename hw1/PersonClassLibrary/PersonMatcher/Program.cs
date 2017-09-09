@@ -26,9 +26,8 @@ namespace PersonMatcher
             string dataFilename = "";
             string outputFilename = "";
             int algorithm = 0;
-            if (args.Length != 3)
+            if (!CheckArguments(args))
             {
-                Console.WriteLine("Incorrect number of Arguments given.");
                 HelpMessage();
                 return;
             }
@@ -60,6 +59,30 @@ namespace PersonMatcher
             Console.ReadLine();
         }
 
+        private static bool CheckArguments(string[] s)
+        {
+            if(s.Length != 3)
+            {
+                Console.WriteLine("Incorrect number of arguments given");
+                return false;
+            }
+            int r = 0;
+            if(int.TryParse(s[0], out (r)))
+            {
+                if(1 > r || r > 3)
+                {
+                    Console.WriteLine("Matching Algorithm not supported");
+                    return false;
+                }
+            }
+            if (!File.Exists(s[1]))
+            {
+                Console.WriteLine("File specified does not exist");
+                return false;
+            }
+            return true;
+        }
+
         private static void HelpMessage()
         {
             Console.WriteLine("Person Class Library:");
@@ -72,6 +95,10 @@ namespace PersonMatcher
             Console.WriteLine("\t\t <output filename> Where PersonMatcher will be looking to export the results");
             Console.WriteLine("\t Example:");
             Console.WriteLine("\t\t PersonMatcher 1 JSON_PersonTestSet_3.json Results.txt ");
+            Console.WriteLine("\t Matching:");
+            Console.WriteLine("\t\t 1) Match by Name");
+            Console.WriteLine("\t\t 2) Match by Birth/Mother");
+            Console.WriteLine("\t\t 3) Match by Identifier");
         }
         private static void CreateSampleThings(PersonCollection collection)
         {

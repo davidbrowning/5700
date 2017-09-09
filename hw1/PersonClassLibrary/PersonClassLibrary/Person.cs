@@ -48,5 +48,9 @@ namespace PersonClassLibrary
         public string Phone1 { get; set; }
         [DataMember]
         public string Phone2 { get; set; }
+        public override string ToString()
+        {
+            return $"ObjectId={ObjectId}, FirstName={FirstName}, MiddleName={MiddleName}, LastName={LastName}";
+        }
     }
 }

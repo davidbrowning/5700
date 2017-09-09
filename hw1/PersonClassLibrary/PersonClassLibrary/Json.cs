@@ -8,56 +8,29 @@ using System.Runtime.Serialization.Json;
 
 namespace PersonClassLibrary
 {
-    public class Json : Serializer 
+    public class Json : Serializer
     {
         private static readonly DataContractJsonSerializer JsonSerializer = new DataContractJsonSerializer(typeof(List<Person>),
-                        new[] { typeof(Person)});
+                     new[] { typeof(Person) });
 
-        override public void Write(List<Person> list, string filename)
+        public override void Write(List<Person> data, string filename)
         {
-            StreamWriter writer = null;
-            try
-            {
-                filename = AppendExtension(filename, "json");
-                writer = new StreamWriter(filename);
-                JsonSerializer.WriteObject(writer.BaseStream, this);
-                writer.Close();
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine($"Cannot write to {filename}: {err.Message}");
-                throw;
-            }
-            finally
-            {
-                writer?.Close();
-            }
-
+            filename = AppendExtension(filename, "json");
+            StreamWriter writer = new StreamWriter(filename);
+            JsonSerializer.WriteObject(writer.BaseStream, data);
+            writer.Close();
         }
-        override public void Read(List<Person> list, string filename)
-        {
-            StreamReader reader = null;
-            try
-            {
-                filename = AppendExtension(filename, "json");
-                reader = new StreamReader(filename);
-                List<Person> input = JsonSerializer.ReadObject(reader.BaseStream) as List<Person>;
-                if (input != null)
-                {
-                    foreach (Person thing in input)
-                        list.Add(thing);
-                }
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine($"Cannot read from {filename}: {err.Message}");
-                throw;
-            }
-            finally
-            {
-                reader?.Close();
-            }
 
+        public override void Read(List<Person> list, string filename)
+        {
+            filename = AppendExtension(filename, "json");
+            StreamReader reader = new StreamReader(filename);
+            List<Person> data = JsonSerializer.ReadObject(reader.BaseStream) as List<Person>;
+            if (data != null)
+            {
+                foreach (Person thing in data)
+                    list.Add(thing);
+            }
         }
     }
 }

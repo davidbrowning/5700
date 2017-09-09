@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BirthMatcher.cs" />
+    <Compile Include="IdentifierMatcher.cs" />
+    <Compile Include="NameMatcher.cs" />
+    <Compile Include="Matcher.cs" />
     <Compile Include="Xml.cs" />
     <Compile Include="Json.cs" />
     <Compile Include="Serializer.cs" />
