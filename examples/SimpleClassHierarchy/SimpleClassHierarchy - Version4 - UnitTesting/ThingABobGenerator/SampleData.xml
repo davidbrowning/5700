@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfThingABob xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ThingABob xsi:type="Gadget">
+    <Id>50</Id>
+    <Name>A</Name>
+    <Length>3</Length>
+    <Width>4</Width>
+  </ThingABob>
+  <ThingABob xsi:type="Widget">
+    <Id>51</Id>
+    <Name>B</Name>
+    <Weight>20.5</Weight>
+  </ThingABob>
+  <ThingABob xsi:type="Gadget">
+    <Id>52</Id>
+    <Name>C</Name>
+    <Length>4</Length>
+    <Width>4</Width>
+  </ThingABob>
+  <ThingABob xsi:type="Widget">
+    <Id>53</Id>
+    <Name>D</Name>
+    <Weight>30.55</Weight>
+  </ThingABob>
+  <ThingABob xsi:type="Widget">
+    <Id>54</Id>
+    <Name>E</Name>
+    <Weight>50.25</Weight>
+  </ThingABob>
+  <ThingABob xsi:type="Widget">
+    <Id>55</Id>
+    <Name>F</Name>
+    <Weight>60.19</Weight>
+  </ThingABob>
+  <ThingABob xsi:type="Gadget">
+    <Id>56</Id>
+    <Name>G</Name>
+    <Length>20</Length>
+    <Width>4</Width>
+  </ThingABob>
+  <ThingABob xsi:type="Gadget">
+    <Id>57</Id>
+    <Name>H</Name>
+    <Length>12</Length>
+    <Width>5</Width>
+  </ThingABob>
+</ArrayOfThingABob>
