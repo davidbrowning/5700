@@ -83,6 +83,7 @@ namespace PersonMatcher
                     {
                         f.WriteLine(pair.ToString());
                     }
+                    f.Flush();
                 }
                 catch {
                     Console.WriteLine("Error writing to file.");
