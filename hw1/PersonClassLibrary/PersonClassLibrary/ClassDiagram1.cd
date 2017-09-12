@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PersonClassLibrary.BirthMatcher" Collapsed="true">
+    <Position X="0.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BirthMatcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonClassLibrary.IdentifierMatcher" Collapsed="true">
+    <Position X="5.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IdentifierMatcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonClassLibrary.Json">
+    <Position X="12.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Json.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonClassLibrary.Matcher" Collapsed="true">
+    <Position X="3" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Matcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonClassLibrary.NameMatcher" Collapsed="true">
+    <Position X="3" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NameMatcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonClassLibrary.Person">
+    <Position X="14.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SAAAAECAAQABAACEAIAQAAQAAAAIAAqEAIAAIAAAAAg=</HashCode>
+      <FileName>Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonClassLibrary.PersonCollection">
+    <Position X="13" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAIAAAIAAAAAAIEAAAA=</HashCode>
+      <FileName>PersonCollectioncs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonClassLibrary.PersonPair">
+    <Position X="11.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAgAAAAAAIA=</HashCode>
+      <FileName>PersonPair.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonClassLibrary.Serializer">
+    <Position X="10" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAQgAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Serializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonClassLibrary.SimpleBirthMatcher">
+    <Position X="3" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SimpleBirthMatcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonClassLibrary.SimpleIdentityMatcher">
+    <Position X="5.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SimpleIdentityMatcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonClassLibrary.SimpleMatcher">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SimpleMatcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonClassLibrary.SimpleNameMatcher">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <InheritanceLine Type="PersonClassLibrary.SimpleMatcher" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.75" Y="1.603" />
+        <Point X="3.75" Y="1.853" />
+        <Point X="1.188" Y="1.853" />
+        <Point X="1.188" Y="2" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SimpleNameMatcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonClassLibrary.Xml">
+    <Position X="7.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAgAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Xml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
