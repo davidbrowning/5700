@@ -1,0 +1,3 @@
+The first example that comes to mind in regard to the observer pattern is the Socket.io library in Javascript. I'm not entirely certain that it fits however as both the subject and the observer are in turn an observer and a subject. Does anyone have more insight on that? 
+
+I've also seen the update() function which I assume is most typically associated with the observer pattern in virtually every GUI I've come across. Thinking about it a bit more I suppose that makes a lot of sense since the GUI acts as a human observer. The human bit just isn't written in machine code.

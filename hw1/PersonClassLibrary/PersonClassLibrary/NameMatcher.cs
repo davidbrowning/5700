@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PersonClassLibrary
 {
-    class NameMatcher : Matcher
+    public class NameMatcher : Matcher
     {
         public override Dictionary<string, List<Person>> FindMatches(List<Person> list)
         {
@@ -31,9 +31,12 @@ namespace PersonClassLibrary
                 pairs.Add(p);
                 foreach (Person q in list)
                 {
-                    if (p.FirstName == q.FirstName && p.MiddleName == q.MiddleName &&  p.LastName == q.LastName)
+                    if (p.ObjectId != q.ObjectId)
                     {
-                        pairs.Add(q);
+                        if (p.FirstName == q.FirstName && p.MiddleName == q.MiddleName && p.LastName == q.LastName)
+                        {
+                            pairs.Add(q);
+                        }
                     }
                 }
                 results[p.LastName+","+p.FirstName] = pairs ;

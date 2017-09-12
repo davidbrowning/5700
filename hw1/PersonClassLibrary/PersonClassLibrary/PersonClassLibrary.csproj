@@ -45,6 +45,11 @@
     <Compile Include="IdentifierMatcher.cs" />
     <Compile Include="NameMatcher.cs" />
     <Compile Include="Matcher.cs" />
+    <Compile Include="PersonPair.cs" />
+    <Compile Include="SimpleIdentityMatcher.cs" />
+    <Compile Include="SimpleMatcher.cs" />
+    <Compile Include="SimpleBirthMatcher.cs" />
+    <Compile Include="SimpleNameMatcher.cs" />
     <Compile Include="Xml.cs" />
     <Compile Include="Json.cs" />
     <Compile Include="Serializer.cs" />

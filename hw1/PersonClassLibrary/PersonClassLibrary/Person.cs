@@ -48,9 +48,22 @@ namespace PersonClassLibrary
         public string Phone1 { get; set; }
         [DataMember]
         public string Phone2 { get; set; }
+        [DataMember]
+        public string BirthDate { get; set; }
         public override string ToString()
         {
-            return $"ObjectId={ObjectId}, FirstName={FirstName}, MiddleName={MiddleName}, LastName={LastName}";
+            try
+            {
+                string d = this.BirthDay.ToString();
+                string m = this.BirthMonth.ToString();
+                string y = this.BirthYear.ToString();
+                BirthDate = d + "/" + m + "/" + y; 
+            }
+            catch
+            {
+                Console.WriteLine("Error parsing Birthdate");
+            }
+            return $"ObjectId={ObjectId}, FirstName={FirstName}, MiddleName={MiddleName}, LastName={LastName} BirthDate={BirthDate}";
         }
     }
 }
