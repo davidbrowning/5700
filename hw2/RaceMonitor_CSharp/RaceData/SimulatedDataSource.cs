@@ -6,7 +6,7 @@ using RaceData.Messages;
 
 namespace RaceData
 {
-    public class SimluatedDataSource
+    public class SimulatedDataSource : IRaceDataSource
     {
         private StreamReader _reader;
         private Thread _myThread;
@@ -46,12 +46,17 @@ namespace RaceData
 
         private void SimulateOneSecondOfData()
         {
-            string line = _reader.ReadLine();
-            while (line != "---" && !_reader.EndOfStream)
+            bool keepingGoing = true;
+            while (keepingGoing && !_reader.EndOfStream)
             {
-                var message = AthleteUpdate.Create(line);
-                Handler.ProcessUpdate(message);
-                line = _reader.ReadLine();
+                var line = _reader.ReadLine();
+                if (line == "---")
+                    keepingGoing = false;
+                else
+                {
+                    var message = AthleteUpdate.Create(line);
+                    Handler.ProcessUpdate(message);
+                }
             }
         }
     }

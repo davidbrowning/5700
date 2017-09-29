@@ -23,10 +23,15 @@ namespace RaceData.Messages
         public static AthleteUpdate Create(string simulationData)
         {
             if (string.IsNullOrWhiteSpace(simulationData))
-                return null;
+                throw new ApplicationException("Data required to create an AthleteUpdate");
 
-            string[] fields = simulationData.Split(',');
-            AthleteRaceStatus objectType = (AthleteRaceStatus) Convert.ToInt32(fields[0]);
+            var fields = simulationData.Split(',');
+            if (fields.Length < 3)
+                throw new ApplicationException("At least 3 data fields required to create an AthleteUpdate");
+
+            AthleteRaceStatus objectType;
+            if (!Enum.TryParse(fields[0], out objectType))
+                throw new ApplicationException("Invalid AthleteUpdate type");
 
             AthleteUpdate result=null;
             switch (objectType)
@@ -47,7 +52,10 @@ namespace RaceData.Messages
                     result = new DidNotFinishUpdate(fields);
                     break;
                 case AthleteRaceStatus.Finished:
+                    result = new FinishedUpdate(fields);
                     break;
+                default:
+                    throw new ApplicationException("Invalid AthleteUpdate type");
             }
             return result;
         }

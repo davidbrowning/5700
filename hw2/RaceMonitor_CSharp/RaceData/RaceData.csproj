@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AthleteRaceStatus.cs" />
     <Compile Include="IAthleteUpdateHandler.cs" />
+    <Compile Include="IRaceDataSource.cs" />
     <Compile Include="Messages\AthleteUpdate.cs" />
     <Compile Include="Messages\DidNotFinishUpdate.cs" />
     <Compile Include="Messages\DidNotStartUpdate.cs" />
@@ -52,10 +53,13 @@
     <Compile Include="Messages\StartedUpdate.cs" />
     <Compile Include="RaceCourse.cs" />
     <Compile Include="RaceEvent.cs" />
-    <Compile Include="SimluatedDataSource.cs" />
+    <Compile Include="SimulatedDataSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Q /Y "$(TargetPath)" "../../../Dist"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
