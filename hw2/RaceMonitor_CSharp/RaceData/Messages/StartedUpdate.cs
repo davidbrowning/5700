@@ -10,10 +10,10 @@ namespace RaceData.Messages
 
         public StartedUpdate(string[] properties) : base(AthleteRaceStatus.Started, properties)
         {
-            if (properties.Length != 2 || properties[0] != AthleteRaceStatus.Started.ToString())
+            if (properties.Length != 4 || properties[0] != AthleteRaceStatus.Started.ToString())
                 throw new ApplicationException("Invalid properties");
 
-            OfficialStartTime = Convert.ToDateTime(properties[1]);
+            OfficialStartTime = Convert.ToDateTime(properties[3]);
         }
 
         public override string ToString()

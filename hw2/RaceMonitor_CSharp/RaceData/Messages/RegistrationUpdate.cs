@@ -16,10 +16,10 @@ namespace RaceData.Messages
             if (properties.Length!=7 || properties[0] != AthleteRaceStatus.Registered.ToString())
                 throw new ApplicationException("Invalid properties");
 
-            FirstName = properties[1];
-            LastName = properties[2];
-            Gender = properties[3];
-            Age = Convert.ToInt32(properties[4]);
+            FirstName = properties[3];
+            LastName = properties[4];
+            Gender = properties[5];
+            Age = Convert.ToInt32(properties[6]);
         }
 
 

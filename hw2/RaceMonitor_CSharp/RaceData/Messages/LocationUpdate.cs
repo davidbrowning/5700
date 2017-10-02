@@ -11,10 +11,10 @@ namespace RaceData.Messages
 
         public LocationUpdate(string[] properties) : base(AthleteRaceStatus.OnCourse, properties)
         {
-            if (properties.Length != 4 || properties[0] != AthleteRaceStatus.Finished.ToString())
+            if (properties.Length != 4 || properties[0] != AthleteRaceStatus.OnCourse.ToString())
                 throw new ApplicationException("Invalid properties");
 
-            LocationOnCourse = Convert.ToInt32(properties[1]);
+            LocationOnCourse = Convert.ToDouble(properties[3]);
         }
 
         public override string ToString()

@@ -7,6 +7,6 @@
         Started = 3,
         OnCourse = 4,
         DidNotFinish = 5,
-        Finished = 6
+        Finished = 6       
     }
 }

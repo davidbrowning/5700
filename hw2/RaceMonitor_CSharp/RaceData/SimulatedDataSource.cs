@@ -46,12 +46,17 @@ namespace RaceData
 
         private void SimulateOneSecondOfData()
         {
-            string line = _reader.ReadLine();
-            while (line != "---" && !_reader.EndOfStream)
+            bool keepingGoing = true;
+            while (keepingGoing && !_reader.EndOfStream)
             {
-                var message = AthleteUpdate.Create(line);
-                Handler.ProcessUpdate(message);
-                line = _reader.ReadLine();
+                var line = _reader.ReadLine();
+                if (line == "---")
+                    keepingGoing = false;
+                else
+                {
+                    var message = AthleteUpdate.Create(line);
+                    Handler.ProcessUpdate(message);
+                }
             }
         }
     }
