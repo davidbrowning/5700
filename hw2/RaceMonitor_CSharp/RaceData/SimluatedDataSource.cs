@@ -6,7 +6,7 @@ using RaceData.Messages;
 
 namespace RaceData
 {
-    public class SimluatedDataSource
+    public class SimluatedDataSource : IRaceDataSource
     {
         private StreamReader _reader;
         private Thread _myThread;

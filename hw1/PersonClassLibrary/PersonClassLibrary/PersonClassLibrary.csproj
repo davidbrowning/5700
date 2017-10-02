@@ -41,10 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BirthMatcher.cs" />
-    <Compile Include="IdentifierMatcher.cs" />
-    <Compile Include="NameMatcher.cs" />
-    <Compile Include="Matcher.cs" />
+    <Compile Include="ConsoleOutput.cs" />
+    <Compile Include="FileOutput.cs" />
+    <Compile Include="Outputter.cs" />
     <Compile Include="PersonPair.cs" />
     <Compile Include="SimpleIdentityMatcher.cs" />
     <Compile Include="SimpleMatcher.cs" />

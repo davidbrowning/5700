@@ -18,10 +18,6 @@ namespace PersonMatcher
             new Json(){Name=".JSON", Description="Serialize to/from JSON" },
             new Xml(){Name=".XML", Description="Serialize to/from XML" }
         };
-        private static readonly Matcher[] matcherarray = new Matcher[]
-        {
-            new NameMatcher(), new BirthMatcher(), new IdentifierMatcher()
-        };
 
         static void Main(string[] args)
         {
@@ -42,7 +38,7 @@ namespace PersonMatcher
                 outputFilename = args[2];
             }
 
-            Matcher m = GetMatcher(algorithm);
+            //Matcher m = GetMatcher(algorithm);
             SimpleMatcher sm = GetSimpleMatcher(algorithm);
             Serializer serializer = GetFileFormat(args[1]);
             if (serializer == null)
@@ -58,7 +54,7 @@ namespace PersonMatcher
             PersonCollection pc = new PersonCollection() { MySerializer = serializer, MyDataFile = dataFilename };
             pc.Read();
             //pc.PrintCollection("objects in the json collection");
-            Dictionary<string, List<Person>> d = m.FindMatches(pc);
+            //Dictionary<string, List<Person>> d = m.FindMatches(pc);
 
             foreach (Person p in pc)
             {
@@ -76,45 +72,33 @@ namespace PersonMatcher
             }
             if (args.Length > 2)
             {
-                try
-                {
-                    StreamWriter f = new StreamWriter(args[2]);
-                    foreach (PersonPair pair in listOfMatches)
-                    {
-                        f.WriteLine(pair.ToString());
-                    }
-                    f.Flush();
-                }
-                catch {
-                    Console.WriteLine("Error writing to file.");
-                }
+                pc.MyOutputter = new FileOutput(args[2]);
+                pc.MyOutputter.Output(listOfMatches);
             }
             else
             {
-                foreach (PersonPair pair in listOfMatches)
-                {
-                    Console.WriteLine("Match:\n\t" + pair.One.ToString() + "\n\t" + pair.Two.ToString());
-                }
+                pc.MyOutputter = new ConsoleOutput();
+                pc.MyOutputter.Output(listOfMatches);
             }
 
             Console.WriteLine("\nType ENTER to exit");
             Console.WriteLine("");
             Console.ReadLine();
         }
-        private static Matcher GetMatcher(int n)
-        {
-            switch (n)
-            {
-                case (1):
-                    return new NameMatcher();               
-                case (2):
-                    return new BirthMatcher();
-                case (3):
-                    return new IdentifierMatcher();
-                default: Console.WriteLine("Something has gone horribly wrong, you should never see this");
-                    return new NameMatcher();
-            }
-        }
+        //private static Matcher GetMatcher(int n)
+        //{
+        //    switch (n)
+        //    {
+        //        case (1):
+        //            return new NameMatcher();               
+        //        case (2):
+        //            return new BirthMatcher();
+        //        case (3):
+        //            return new IdentifierMatcher();
+        //        default: Console.WriteLine("Something has gone horribly wrong, you should never see this");
+        //            return new NameMatcher();
+        //    }
+        //}
         private static SimpleMatcher GetSimpleMatcher(int n)
         {
             switch (n)

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AthleteRaceStatus.cs" />
     <Compile Include="IAthleteUpdateHandler.cs" />
+    <Compile Include="IRaceDataSource.cs" />
     <Compile Include="Messages\AthleteUpdate.cs" />
     <Compile Include="Messages\DidNotFinishUpdate.cs" />
     <Compile Include="Messages\DidNotStartUpdate.cs" />

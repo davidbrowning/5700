@@ -7,6 +7,7 @@ namespace PersonClassLibrary
     public class PersonCollection : List<Person>
     {
         public Serializer MySerializer { get; set; }
+        public Outputter MyOutputter { get; set; }
         public string MyDataFile { get; set; }
 
         public void PrintCollection(string header)
