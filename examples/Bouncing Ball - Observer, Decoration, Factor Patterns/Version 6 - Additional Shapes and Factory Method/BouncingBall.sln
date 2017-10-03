@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BouncingBall", "BouncingBall\BouncingBall.csproj", "{16AB1F6C-D268-4DCD-B68D-EBF798188F8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BouncingBallTesting", "BouncingBallTesting\BouncingBallTesting.csproj", "{64A68A79-D3BA-4E18-B1C6-1FCBACD3CD9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shapes", "Shapes\Shapes.csproj", "{69994955-44C4-4DDD-BAEB-53C93DF422CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16AB1F6C-D268-4DCD-B68D-EBF798188F8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16AB1F6C-D268-4DCD-B68D-EBF798188F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16AB1F6C-D268-4DCD-B68D-EBF798188F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16AB1F6C-D268-4DCD-B68D-EBF798188F8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64A68A79-D3BA-4E18-B1C6-1FCBACD3CD9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64A68A79-D3BA-4E18-B1C6-1FCBACD3CD9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64A68A79-D3BA-4E18-B1C6-1FCBACD3CD9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64A68A79-D3BA-4E18-B1C6-1FCBACD3CD9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69994955-44C4-4DDD-BAEB-53C93DF422CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69994955-44C4-4DDD-BAEB-53C93DF422CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69994955-44C4-4DDD-BAEB-53C93DF422CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69994955-44C4-4DDD-BAEB-53C93DF422CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
