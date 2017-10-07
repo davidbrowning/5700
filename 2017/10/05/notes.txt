@@ -1,0 +1,23 @@
+Singletons:
+ example in current assignment
+  set of athletes could be a singleton. 
+
+  Observer
+   update()
+  set observer -> observes Athlete set (candidate for singleton). 
+
+ Singleton: class with single object guaranteed. 
+
+ What about some kind of prototypical object? 
+ e.g. drawing program. 
+  Draws trees. 
+
+
+ Intrinsic/Extrinsic state
+  v         v
+  Multiple  One
+
+ Flyweight pattern.
+  Ability to subdivide object and share common state (especially if that state is heavy e.g. bitmap). 
+
+
