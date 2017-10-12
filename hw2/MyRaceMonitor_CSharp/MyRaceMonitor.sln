@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRaceMonitor", "MyRaceMonitor\MyRaceMonitor.csproj", "{24ADA092-E7BC-4AC6-BAA2-92827ACCB697}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppLayer", "AppLayer\AppLayer.csproj", "{AE3E551A-BE35-4529-AABB-1ADAEE9C77B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiLayer", "GuiLayer\GuiLayer.csproj", "{5F31595B-A700-414B-BF2B-E2F9A1B04396}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,15 @@ Global
 		{AE3E551A-BE35-4529-AABB-1ADAEE9C77B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE3E551A-BE35-4529-AABB-1ADAEE9C77B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE3E551A-BE35-4529-AABB-1ADAEE9C77B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F31595B-A700-414B-BF2B-E2F9A1B04396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F31595B-A700-414B-BF2B-E2F9A1B04396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F31595B-A700-414B-BF2B-E2F9A1B04396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F31595B-A700-414B-BF2B-E2F9A1B04396}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C33BE679-9CC9-4B07-B242-E73A3C70B264}
 	EndGlobalSection
 EndGlobal

@@ -13,8 +13,26 @@ namespace AppLayer
     {
         public void ProcessUpdate(AthleteUpdate updateMessage)
         {
-            // TODO: Do something to process the update message, depending on the concrete type of message
-            // TODO: Note that the console write line does below here
+            switch (updateMessage.UpdateType)
+            {
+                case (AthleteRaceStatus.Registered):
+                    Athlete a = new Athlete(updateMessage as RegistrationUpdate);
+                    ObservedAthletes.GetInstance().AddAthlete(a);
+                    break;
+                case (AthleteRaceStatus.Started):
+                    break;
+                case (AthleteRaceStatus.DidNotStart):
+                    break;
+                case (AthleteRaceStatus.OnCourse):
+                    break;
+                case (AthleteRaceStatus.Finished):
+                    break;
+                case (AthleteRaceStatus.DidNotFinish):
+                    break;
+                default:
+                    Console.WriteLine("Error unrecognized AthleteRaceStatus.Registered");
+                    break;
+            }
             Console.WriteLine(updateMessage.ToString());
         }
     }
