@@ -10,9 +10,8 @@ namespace AppLayer
     public class AthleteObserver : Form
     {
         //private readonly Dictionary<int, Athlete> _AthletesBeingObserved = new Dictionary<int, Athlete>();
-        private readonly Dictionary<int, Athlete> _AthletesBeingObserved = ObservedAthletes.GetInstance().GetDictionary();
-        private List<Athlete> _AthletesBeingObservedList = ObservedAthletes.GetInstance().GetList();
-        protected bool RepaintNeeded;
+        private readonly Dictionary<int, Athlete> _AthletesBeingObserved = new Dictionary<int, Athlete>();
+        protected bool RepaintNeeded = false;
         private readonly Timer _refreshTester = new Timer();
         private readonly object _myLock = new object();
 
@@ -27,10 +26,10 @@ namespace AppLayer
 
             lock (_myLock)
             {
-                if (!_AthletesBeingObserved.ContainsKey(Athlete.bib_number))
-                    _AthletesBeingObserved.Add(Athlete.bib_number, Athlete);
+                if (!_AthletesBeingObserved.ContainsKey(Athlete.BibNumber))
+                    _AthletesBeingObserved.Add(Athlete.BibNumber, Athlete);
                 else
-                    _AthletesBeingObserved[Athlete.bib_number] = Athlete;
+                    _AthletesBeingObserved[Athlete.BibNumber] = Athlete;
             }
             RepaintNeeded = true;
         }

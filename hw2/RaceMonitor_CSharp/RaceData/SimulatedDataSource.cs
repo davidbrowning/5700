@@ -14,7 +14,7 @@ namespace RaceData
 
         public string InputFilename { get; set; }
         public IAthleteUpdateHandler Handler { get; set; }
-        public int SleepTimeForSimulatedSecond { get; set; } = 1000;
+        public int SleepTimeForSimulatedSecond { get; set; } = 100;
 
         public void Start()
         {

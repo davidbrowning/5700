@@ -13,23 +13,24 @@ namespace AppLayer
     {
         public Athlete(RegistrationUpdate rp)
         {
-            this.age = rp.Age;
-            this.bib_number = rp.BibNumber;
+            this.Age = rp.Age;
+            this.BibNumber = rp.BibNumber;
             this.FirstName = rp.FirstName;
             this.LastName = rp.LastName;
             this.Gender = rp.Gender;
             this.raceStatus = rp.UpdateType;
         }
-        public int bib_number { get; set; }
+        public int BibNumber { get; set; }
 
         internal void Unsubscribe(Observer observer)
         {
             throw new NotImplementedException();
         }
         public AthleteRaceStatus raceStatus { get; set; }
-        private string FirstName { get; set; }
-        private string LastName { get; set; }
-        private string Gender { get; set; }
-        private int age { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Gender { get; set; }
+        public int Age { get; set; }
+        public DateTime TimeStamp { get; set; }
     }
 }

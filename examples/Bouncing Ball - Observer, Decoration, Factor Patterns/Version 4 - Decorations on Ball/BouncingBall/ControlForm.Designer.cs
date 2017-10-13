@@ -59,12 +59,14 @@
             this.columnHeader2,
             this.columnHeader3});
             this.otherBallsListView.FullRowSelect = true;
-            this.otherBallsListView.Location = new System.Drawing.Point(289, 213);
+            this.otherBallsListView.Location = new System.Drawing.Point(385, 262);
+            this.otherBallsListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.otherBallsListView.Name = "otherBallsListView";
-            this.otherBallsListView.Size = new System.Drawing.Size(210, 269);
+            this.otherBallsListView.Size = new System.Drawing.Size(279, 330);
             this.otherBallsListView.TabIndex = 1;
             this.otherBallsListView.UseCompatibleStateImageBehavior = false;
             this.otherBallsListView.View = System.Windows.Forms.View.Details;
+            this.otherBallsListView.SelectedIndexChanged += new System.EventHandler(this.otherBallsListView_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -81,27 +83,30 @@
             // otherBallLabel
             // 
             this.otherBallLabel.AutoSize = true;
-            this.otherBallLabel.Location = new System.Drawing.Point(286, 194);
+            this.otherBallLabel.Location = new System.Drawing.Point(381, 239);
+            this.otherBallLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.otherBallLabel.Name = "otherBallLabel";
-            this.otherBallLabel.Size = new System.Drawing.Size(61, 13);
+            this.otherBallLabel.Size = new System.Drawing.Size(82, 17);
             this.otherBallLabel.TabIndex = 2;
             this.otherBallLabel.Text = "Other Balls:";
             // 
             // observersLabel
             // 
             this.observersLabel.AutoSize = true;
-            this.observersLabel.Location = new System.Drawing.Point(12, 18);
+            this.observersLabel.Location = new System.Drawing.Point(16, 22);
+            this.observersLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.observersLabel.Name = "observersLabel";
-            this.observersLabel.Size = new System.Drawing.Size(58, 13);
+            this.observersLabel.Size = new System.Drawing.Size(78, 17);
             this.observersLabel.TabIndex = 3;
             this.observersLabel.Text = "Observers:";
             // 
             // observedBallsLabel
             // 
             this.observedBallsLabel.AutoSize = true;
-            this.observedBallsLabel.Location = new System.Drawing.Point(12, 194);
+            this.observedBallsLabel.Location = new System.Drawing.Point(16, 239);
+            this.observedBallsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.observedBallsLabel.Name = "observedBallsLabel";
-            this.observedBallsLabel.Size = new System.Drawing.Size(79, 13);
+            this.observedBallsLabel.Size = new System.Drawing.Size(104, 17);
             this.observedBallsLabel.TabIndex = 5;
             this.observedBallsLabel.Text = "Subscribed To:";
             // 
@@ -112,9 +117,10 @@
             this.columnHeader5,
             this.columnHeader6});
             this.observedBallsListView.FullRowSelect = true;
-            this.observedBallsListView.Location = new System.Drawing.Point(15, 213);
+            this.observedBallsListView.Location = new System.Drawing.Point(20, 262);
+            this.observedBallsListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.observedBallsListView.Name = "observedBallsListView";
-            this.observedBallsListView.Size = new System.Drawing.Size(210, 269);
+            this.observedBallsListView.Size = new System.Drawing.Size(279, 330);
             this.observedBallsListView.TabIndex = 6;
             this.observedBallsListView.UseCompatibleStateImageBehavior = false;
             this.observedBallsListView.View = System.Windows.Forms.View.Details;
@@ -133,10 +139,11 @@
             // 
             // observersListView
             // 
-            this.observersListView.Location = new System.Drawing.Point(12, 35);
+            this.observersListView.Location = new System.Drawing.Point(16, 43);
+            this.observersListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.observersListView.MultiSelect = false;
             this.observersListView.Name = "observersListView";
-            this.observersListView.Size = new System.Drawing.Size(197, 103);
+            this.observersListView.Size = new System.Drawing.Size(261, 126);
             this.observersListView.TabIndex = 7;
             this.observersListView.UseCompatibleStateImageBehavior = false;
             this.observersListView.View = System.Windows.Forms.View.List;
@@ -144,9 +151,10 @@
             // 
             // unscribeButton
             // 
-            this.unscribeButton.Location = new System.Drawing.Point(234, 333);
+            this.unscribeButton.Location = new System.Drawing.Point(312, 410);
+            this.unscribeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.unscribeButton.Name = "unscribeButton";
-            this.unscribeButton.Size = new System.Drawing.Size(41, 23);
+            this.unscribeButton.Size = new System.Drawing.Size(55, 28);
             this.unscribeButton.TabIndex = 8;
             this.unscribeButton.Text = ">";
             this.unscribeButton.UseVisualStyleBackColor = true;
@@ -154,9 +162,10 @@
             // 
             // subscribeButton
             // 
-            this.subscribeButton.Location = new System.Drawing.Point(234, 298);
+            this.subscribeButton.Location = new System.Drawing.Point(312, 367);
+            this.subscribeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.subscribeButton.Name = "subscribeButton";
-            this.subscribeButton.Size = new System.Drawing.Size(41, 23);
+            this.subscribeButton.Size = new System.Drawing.Size(55, 28);
             this.subscribeButton.TabIndex = 9;
             this.subscribeButton.Text = "<";
             this.subscribeButton.UseVisualStyleBackColor = true;
@@ -164,9 +173,10 @@
             // 
             // createObserverButton
             // 
-            this.createObserverButton.Location = new System.Drawing.Point(12, 144);
+            this.createObserverButton.Location = new System.Drawing.Point(16, 177);
+            this.createObserverButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.createObserverButton.Name = "createObserverButton";
-            this.createObserverButton.Size = new System.Drawing.Size(75, 23);
+            this.createObserverButton.Size = new System.Drawing.Size(100, 28);
             this.createObserverButton.TabIndex = 11;
             this.createObserverButton.Text = "Create";
             this.createObserverButton.UseVisualStyleBackColor = true;
@@ -174,9 +184,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(289, 144);
+            this.button1.Location = new System.Drawing.Point(385, 177);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 13;
             this.button1.Text = "Create a Ball";
             this.button1.UseVisualStyleBackColor = true;
@@ -188,9 +199,11 @@
             this.groupBox1.Controls.Add(this.changeDirection);
             this.groupBox1.Controls.Add(this.changeSpeed);
             this.groupBox1.Controls.Add(this.changeSize);
-            this.groupBox1.Location = new System.Drawing.Point(289, 18);
+            this.groupBox1.Location = new System.Drawing.Point(385, 22);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(210, 120);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(280, 148);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ball Features";
@@ -198,9 +211,10 @@
             // changeColor
             // 
             this.changeColor.AutoSize = true;
-            this.changeColor.Location = new System.Drawing.Point(15, 93);
+            this.changeColor.Location = new System.Drawing.Point(20, 114);
+            this.changeColor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.changeColor.Name = "changeColor";
-            this.changeColor.Size = new System.Drawing.Size(89, 17);
+            this.changeColor.Size = new System.Drawing.Size(114, 21);
             this.changeColor.TabIndex = 3;
             this.changeColor.Text = "Change color";
             this.changeColor.UseVisualStyleBackColor = true;
@@ -208,9 +222,10 @@
             // changeDirection
             // 
             this.changeDirection.AutoSize = true;
-            this.changeDirection.Location = new System.Drawing.Point(15, 70);
+            this.changeDirection.Location = new System.Drawing.Point(20, 86);
+            this.changeDirection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.changeDirection.Name = "changeDirection";
-            this.changeDirection.Size = new System.Drawing.Size(106, 17);
+            this.changeDirection.Size = new System.Drawing.Size(137, 21);
             this.changeDirection.TabIndex = 2;
             this.changeDirection.Text = "Change direction";
             this.changeDirection.UseVisualStyleBackColor = true;
@@ -218,9 +233,10 @@
             // changeSpeed
             // 
             this.changeSpeed.AutoSize = true;
-            this.changeSpeed.Location = new System.Drawing.Point(15, 47);
+            this.changeSpeed.Location = new System.Drawing.Point(20, 58);
+            this.changeSpeed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.changeSpeed.Name = "changeSpeed";
-            this.changeSpeed.Size = new System.Drawing.Size(95, 17);
+            this.changeSpeed.Size = new System.Drawing.Size(122, 21);
             this.changeSpeed.TabIndex = 1;
             this.changeSpeed.Text = "Change speed";
             this.changeSpeed.UseVisualStyleBackColor = true;
@@ -228,18 +244,19 @@
             // changeSize
             // 
             this.changeSize.AutoSize = true;
-            this.changeSize.Location = new System.Drawing.Point(15, 24);
+            this.changeSize.Location = new System.Drawing.Point(20, 30);
+            this.changeSize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.changeSize.Name = "changeSize";
-            this.changeSize.Size = new System.Drawing.Size(84, 17);
+            this.changeSize.Size = new System.Drawing.Size(108, 21);
             this.changeSize.TabIndex = 0;
             this.changeSize.Text = "Change size";
             this.changeSize.UseVisualStyleBackColor = true;
             // 
             // ControlForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 498);
+            this.ClientSize = new System.Drawing.Size(695, 613);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.createObserverButton);
@@ -251,6 +268,7 @@
             this.Controls.Add(this.observersLabel);
             this.Controls.Add(this.otherBallLabel);
             this.Controls.Add(this.otherBallsListView);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ControlForm";
             this.Text = "ControlForm";
             this.Load += new System.EventHandler(this.ControlForm_Load);

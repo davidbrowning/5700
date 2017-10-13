@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RaceData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\RaceMonitor_CSharp\RaceData\bin\Debug\RaceData.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,14 +49,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AtheletListObserver.cs">
+    <Compile Include="ControlForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="From1.cs">
+    <Compile Include="ControlForm.Designer.cs">
+      <DependentUpon>ControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphicDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="From1.Designer.cs">
-      <DependentUpon>From1.cs</DependentUpon>
+    <Compile Include="GraphicDisplay.Designer.cs">
+      <DependentUpon>GraphicDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListDisplay.Designer.cs">
+      <DependentUpon>ListDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObserverCreationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObserverCreationForm.Designer.cs">
+      <DependentUpon>ObserverCreationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashForm.Designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
@@ -62,8 +87,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="From1.resx">
-      <DependentUpon>From1.cs</DependentUpon>
+    <EmbeddedResource Include="ControlForm.resx">
+      <DependentUpon>ControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListDisplay.resx">
+      <DependentUpon>ListDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObserverCreationForm.resx">
+      <DependentUpon>ObserverCreationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>

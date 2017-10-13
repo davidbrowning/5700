@@ -18,8 +18,13 @@ namespace AppLayer
                 case (AthleteRaceStatus.Registered):
                     Athlete a = new Athlete(updateMessage as RegistrationUpdate);
                     ObservedAthletes.GetInstance().AddAthlete(a);
+                    a.Notify();
                     break;
                 case (AthleteRaceStatus.Started):
+                    foreach (var pair in ObservedAthletes.GetInstance().GetDictionary())
+                    {
+                        pair.Value.Notify();
+                    }
                     break;
                 case (AthleteRaceStatus.DidNotStart):
                     break;

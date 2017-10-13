@@ -46,12 +46,14 @@
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
-            this.ballListView.Location = new System.Drawing.Point(24, 26);
+            this.ballListView.Location = new System.Drawing.Point(32, 32);
+            this.ballListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ballListView.Name = "ballListView";
-            this.ballListView.Size = new System.Drawing.Size(465, 341);
+            this.ballListView.Size = new System.Drawing.Size(619, 419);
             this.ballListView.TabIndex = 0;
             this.ballListView.UseCompatibleStateImageBehavior = false;
             this.ballListView.View = System.Windows.Forms.View.Details;
+            //this.ballListView.SelectedIndexChanged += new System.EventHandler(this.ballListView_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -83,10 +85,11 @@
             // 
             // ListDisplay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 391);
+            this.ClientSize = new System.Drawing.Size(692, 481);
             this.Controls.Add(this.ballListView);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ListDisplay";
             this.Text = "BallListDisplay";
             this.Load += new System.EventHandler(this.ListDisplay_Load);

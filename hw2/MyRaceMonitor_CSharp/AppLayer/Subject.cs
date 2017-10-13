@@ -3,19 +3,48 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AppLayer
 {
-    public abstract class Subject
+    public class Subject
     {
-        private List<AthleteObserver> AthleteObserverList;
+        private readonly object _myLock = new object();
 
-        //internal List<AthleteObserver> AthleteObserverList { get => AthleteObserverList; set => AthleteObserverList = value; }
+        public List<AthleteObserver> Subscribers { get; } = new List<AthleteObserver>();
 
-        public bool Subscribe()
+        public void Subscribe(AthleteObserver observer)
         {
-            return false;
+            lock (_myLock)
+            {
+                if (observer != null && !Subscribers.Contains(observer))
+                    Subscribers.Add(observer);
+            }
         }
-        public bool Unsubscribe(AthleteObserver ao) => true;
+
+        public void Unsubscribe(AthleteObserver observer)
+        {
+            lock (_myLock)
+            {
+                if (Subscribers.Contains(observer))
+                    Subscribers.Remove(observer);
+            }
+        }
+
+        public void Notify()
+        {
+            lock (_myLock)
+            {
+                foreach (AthleteObserver observer in Subscribers)
+                {
+                    observer.Update(Clone());
+                }
+            }
+        }
+
+        public virtual Subject Clone()
+        {
+            return MemberwiseClone() as Subject;
+        }
     }
 }

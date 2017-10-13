@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace AppLayer
 {
-    class ObservedAthletes
+    public class ObservedAthletes
     {
         private ObservedAthletes(){}
 
@@ -27,7 +27,7 @@ namespace AppLayer
         {
             try
             {
-                oa._AthletesBeingObserved.Add(a.bib_number, a);
+                oa._AthletesBeingObserved.Add(a.BibNumber, a);
                 return true;
             }
             catch
@@ -37,6 +37,20 @@ namespace AppLayer
             return false;
         }
 
+        [MethodImpl(MethodImplOptions.Synchronized)]
+        public bool UpdateAthlete(Athlete a)
+        {
+            if(!_AthletesBeingObserved.ContainsKey(a.BibNumber))
+            {
+                oa._AthletesBeingObserved.Add(a.BibNumber, a);
+                return true;
+            }
+            else
+            {
+                oa._AthletesBeingObserved[a.BibNumber] = a;
+            }
+            return false;
+        }
 
         [MethodImpl(MethodImplOptions.Synchronized)]
         public List<Athlete> GetList()
