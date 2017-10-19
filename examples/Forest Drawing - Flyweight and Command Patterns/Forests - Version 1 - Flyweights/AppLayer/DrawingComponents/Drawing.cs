@@ -18,6 +18,15 @@ namespace AppLayer.DrawingComponents
         public Tree SelectedTree { get; set; }
         public bool IsDirty { get; set; } = true;
 
+        public void Clear()
+        {
+            lock (_myLock)
+            {
+                _trees.Clear();
+                IsDirty = true;
+            }
+        }
+
         public void Load(string filename)
         {
             StreamReader reader = new StreamReader(filename);
@@ -127,6 +136,7 @@ namespace AppLayer.DrawingComponents
                 foreach (var t in _trees)
                     t.IsSelected = false;
                 IsDirty = true;
+                SelectedTree = null;
             }
         }
 

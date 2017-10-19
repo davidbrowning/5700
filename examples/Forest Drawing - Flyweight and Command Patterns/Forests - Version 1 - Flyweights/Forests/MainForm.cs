@@ -183,7 +183,7 @@ namespace Forests
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                _drawing = new Drawing() { Factory = _factory };
+                _drawing.Clear();
                 _drawing.Load(dialog.FileName);
                 DisplayDrawing();
             }
