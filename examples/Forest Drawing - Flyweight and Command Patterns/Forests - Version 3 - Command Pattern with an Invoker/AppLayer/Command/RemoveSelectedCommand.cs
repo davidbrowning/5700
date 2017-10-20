@@ -1,0 +1,17 @@
+﻿namespace AppLayer.Command
+{
+    public class RemoveSelectedCommand : Command
+    {
+        internal RemoveSelectedCommand() { }
+
+        public override void Execute()
+        {
+            TargetDrawing?.DeleteAllSelected();
+        }
+
+        internal override void Undo()
+        {
+            // TODO:
+        }
+    }
+}
