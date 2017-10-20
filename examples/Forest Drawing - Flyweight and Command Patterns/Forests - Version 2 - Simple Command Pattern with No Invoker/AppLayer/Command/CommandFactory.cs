@@ -1,4 +1,5 @@
-﻿using AppLayer.DrawingComponents;
+﻿using System.Net.Http;
+using AppLayer.DrawingComponents;
 
 namespace AppLayer.Command
 {
@@ -12,6 +13,7 @@ namespace AppLayer.Command
     {
         private static CommandFactory _instance;
         private static readonly object MyLock = new object();
+
         private CommandFactory() { }
 
         public static CommandFactory Instance
