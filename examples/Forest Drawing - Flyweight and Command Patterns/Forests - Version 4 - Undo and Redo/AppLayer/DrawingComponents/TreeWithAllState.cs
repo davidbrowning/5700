@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Runtime.Serialization;
 
 namespace AppLayer.DrawingComponents
 {
@@ -8,11 +9,14 @@ namespace AppLayer.DrawingComponents
     /// Objects of this class only need to exist for short period time, like a drawing session.
     /// 
     /// For the decorator pattern, this class is a Decorator.  It add the extrinsic state to TreeWithIntrinsic State objects
-    /// </summary>
+    /// </summary
+    [DataContract]
     public class TreeWithAllState : Tree
     {
         internal TreeWithIntrinsicState IntrinsicState { get; }
-        public TreeExtrinsicState ExtrinsicStatic { get; }
+
+        [DataMember]
+        public TreeExtrinsicState ExtrinsicStatic { get; set; }
 
         internal TreeWithAllState(TreeWithIntrinsicState sharedPart, TreeExtrinsicState nonsharedPart)
         {

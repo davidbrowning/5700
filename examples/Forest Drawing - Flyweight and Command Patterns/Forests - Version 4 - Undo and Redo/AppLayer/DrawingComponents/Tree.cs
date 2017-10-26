@@ -1,7 +1,9 @@
 ﻿using System.Drawing;
+using System.Runtime.Serialization;
 
 namespace AppLayer.DrawingComponents
 {
+    [DataContract]
     public abstract class Tree
     {
         public static Pen SelectedPen { get; set; } = new Pen(Color.DarkGray);

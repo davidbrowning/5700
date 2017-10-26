@@ -10,7 +10,8 @@ namespace AppLayer.DrawingComponents
 
     public class Drawing
     {
-        private static readonly DataContractJsonSerializer JsonSerializer = new DataContractJsonSerializer(typeof(List<TreeExtrinsicState>));
+        private static readonly DataContractJsonSerializer JsonSerializer =
+                new DataContractJsonSerializer(typeof(List<Tree>), new [] { typeof(Tree), typeof(TreeWithAllState), typeof(TreeExtrinsicState) });
 
         private readonly List<Tree> _trees = new List<Tree>();
         private readonly object _myLock = new object();
@@ -45,15 +46,21 @@ namespace AppLayer.DrawingComponents
 
         public void LoadFromStream(Stream stream)
         {
-            var extrinsicStates = JsonSerializer.ReadObject(stream) as List<TreeExtrinsicState>;
-            if (extrinsicStates == null) return;
+            var loadedTrees = JsonSerializer.ReadObject(stream) as List<Tree>;
+
+            if (loadedTrees == null || loadedTrees.Count == 0) return;
 
             lock (_myLock)
             {
-                foreach (var extrinsicState in extrinsicStates)
+                // Since only the extrinsic state is saved, recreate the full tree objects
+                foreach (var partialTree in loadedTrees)
                 {
-                    Tree tree = TreeFactory.Instance.GetTree(extrinsicState);
-                    _trees.Add(tree);
+                    TreeWithAllState tmpTree = partialTree as TreeWithAllState;
+                    if (tmpTree != null)
+                    {
+                        Tree fullTree = TreeFactory.Instance.GetTree(tmpTree.ExtrinsicStatic);
+                        _trees.Add(fullTree);
+                    }
                 }
                 IsDirty = true;
             }
@@ -61,12 +68,10 @@ namespace AppLayer.DrawingComponents
 
         public void SaveToStream(Stream stream)
         {
-            var extrinsicStates = new List<TreeExtrinsicState>();
             lock (_myLock)
             {
-                extrinsicStates.AddRange(_trees.OfType<TreeWithAllState>().Select(t => t.ExtrinsicStatic));
+                JsonSerializer.WriteObject(stream, _trees);
             }
-            JsonSerializer.WriteObject(stream, extrinsicStates);
         }
 
         public void Add(Tree tree)
