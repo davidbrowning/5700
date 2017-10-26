@@ -11,9 +11,5 @@ namespace AppLayer.Command
             TargetDrawing?.DeselectAll();
         }
 
-        internal override void Undo()
-        {
-            // TODO:
-        }
     }
 }

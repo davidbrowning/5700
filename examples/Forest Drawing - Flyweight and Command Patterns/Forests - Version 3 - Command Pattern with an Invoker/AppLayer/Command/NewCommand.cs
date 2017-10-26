@@ -11,9 +11,5 @@ namespace AppLayer.Command
             TargetDrawing?.Clear();
         }
 
-        internal override void Undo()
-        {
-            // TODO:
-        }
     }
 }

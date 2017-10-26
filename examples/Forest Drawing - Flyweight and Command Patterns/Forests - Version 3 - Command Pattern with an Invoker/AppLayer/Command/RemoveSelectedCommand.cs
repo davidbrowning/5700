@@ -9,9 +9,5 @@
             TargetDrawing?.DeleteAllSelected();
         }
 
-        internal override void Undo()
-        {
-            // TODO:
-        }
     }
 }

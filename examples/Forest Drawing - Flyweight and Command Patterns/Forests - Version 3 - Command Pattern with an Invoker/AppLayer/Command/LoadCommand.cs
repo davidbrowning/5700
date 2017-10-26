@@ -20,9 +20,5 @@ namespace AppLayer.Command
             reader.Close();
         }
 
-        internal override void Undo()
-        {
-            // TODO:
-        }
     }
 }

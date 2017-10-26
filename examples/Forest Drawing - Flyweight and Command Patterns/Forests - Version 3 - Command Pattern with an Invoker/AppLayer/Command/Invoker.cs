@@ -7,9 +7,9 @@ namespace AppLayer.Command
     public class Invoker
     {
         private Thread _worker;
-        private readonly Stack<Command> _undoStack = new Stack<Command>();
-        private readonly ConcurrentQueue<Command> _todoQueue = new ConcurrentQueue<Command>();
         private bool _keepGoing;
+
+        private readonly ConcurrentQueue<Command> _todoQueue = new ConcurrentQueue<Command>();
         private readonly AutoResetEvent _enqueueOccurred = new AutoResetEvent(false);
 
         public void Start()
@@ -33,25 +33,13 @@ namespace AppLayer.Command
             }
         }
 
-        public void Undo()
-        {
-            if (_undoStack.Count > 0)
-            {
-                Command cmd = _undoStack.Pop();
-                cmd.Undo();
-            }
-        }
-
         private void Run()
         {
             while (_keepGoing)
             {
                 Command cmd;
                 if (_todoQueue.TryDequeue(out cmd))
-                {
                     cmd.Execute();
-                    _undoStack.Push(cmd);
-                }
                 else
                     _enqueueOccurred.WaitOne(100);
             }

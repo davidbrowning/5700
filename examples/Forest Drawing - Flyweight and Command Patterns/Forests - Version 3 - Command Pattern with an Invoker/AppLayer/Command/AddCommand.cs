@@ -59,9 +59,5 @@ namespace AppLayer.Command
             TargetDrawing.Add(tree);
         }
 
-        internal override void Undo()
-        {
-            // TODO:
-        }
     }
 }

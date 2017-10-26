@@ -17,9 +17,5 @@ namespace AppLayer.Command
             TargetDrawing?.ToggleSelectionAtPosition(_location);
         }
 
-        internal override void Undo()
-        {
-            // TODO:
-        }
     }
 }
