@@ -14,7 +14,7 @@ namespace AppLayer.Command
 
         public override void Execute()
         {
-            TargetDrawing?.SelectTreeAtPosition(_location);
+            TargetDrawing?.ToggleSelectionAtPosition(_location);
         }
     }
 }

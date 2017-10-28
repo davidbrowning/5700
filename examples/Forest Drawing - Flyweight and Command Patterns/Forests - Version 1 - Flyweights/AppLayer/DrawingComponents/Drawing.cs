@@ -15,8 +15,7 @@ namespace AppLayer.DrawingComponents
         private readonly object _myLock = new object();
 
         public TreeFactory Factory { get; set; }
-        public Tree SelectedTree { get; set; }
-        public bool IsDirty { get; set; } = true;
+        public bool IsDirty { get; private set; } = true;
 
         public void Clear()
         {
@@ -74,30 +73,21 @@ namespace AppLayer.DrawingComponents
                 }
             }
         }
-
-        public void RemoveTree(Tree tree)
+        public void DeleteAllSelected()
         {
-            if (tree != null)
+            lock (_myLock)
             {
-                lock (_myLock)
-                {
-                    if (SelectedTree == tree)
-                        SelectedTree = null;
-                    _trees.Remove(tree);
-                    IsDirty = true;
-                }
+                _trees.RemoveAll(t => t.IsSelected);
+                IsDirty = true;
             }
         }
 
-        public void SelectTreeAtPosition(Point location)
+        public void ToggleSelectionAtPosition(Point location)
         {
-            if (SelectedTree != null)
-                SelectedTree.IsSelected = false;
+            var tree = FindTreeAtPosition(location);
 
-            SelectedTree = FindTreeAtPosition(location);
-
-            if (SelectedTree != null)
-                SelectedTree.IsSelected = true;
+            if (tree!=null)
+                tree.IsSelected = !tree.IsSelected;
 
             IsDirty = true;
         }
@@ -136,25 +126,15 @@ namespace AppLayer.DrawingComponents
                 foreach (var t in _trees)
                     t.IsSelected = false;
                 IsDirty = true;
-                SelectedTree = null;
             }
         }
 
-        public void RemoveSelectedTree()
-        {
-            if (SelectedTree != null)
-            {
-                RemoveTree(SelectedTree);
-                SelectedTree = null;
-            }
-        }
-
-        public bool Draw(Graphics graphics)
+        public bool Draw(Graphics graphics, bool redrawEvenIfNotDirty = false)
         {
             bool didARedraw = false;
             lock (_myLock)
             {
-                if (IsDirty)
+                if (IsDirty || redrawEvenIfNotDirty)
                 {
                     graphics.Clear(Color.White);
                     foreach (Tree t in _trees)

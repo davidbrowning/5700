@@ -12,6 +12,7 @@ namespace Forests
     public partial class MainForm : Form
     {
         private readonly Drawing _drawing;
+        private bool _forceRedraw;
         private string _currentTreeResource;
         private float _currentScale = 1;
 
@@ -59,14 +60,15 @@ namespace Forests
                 _panelGraphics = drawingPanel.CreateGraphics();
             }
 
-            if (_drawing.Draw(_imageBufferGraphics))
+            if (_drawing.Draw(_imageBufferGraphics, _forceRedraw))
                 _panelGraphics.DrawImageUnscaled(_imageBuffer, 0, 0);
+
+            _forceRedraw = false;
         }
 
         private void newButton_Click(object sender, EventArgs e)
         {
             CommandFactory.Instance.Create("new").Execute();
-            DisplayDrawing();
         }
 
         private void ClearOtherSelectedTools(ToolStripButton ignoreItem)
@@ -106,6 +108,7 @@ namespace Forests
             else
                 _currentTreeResource = string.Empty;
 
+            CommandFactory.Instance.Create("deselect").Execute();
             _mode = (_currentTreeResource != string.Empty) ? PossibleModes.TreeDrawing : PossibleModes.None;
         }
 
@@ -188,13 +191,12 @@ namespace Forests
             drawingPanel.Location = new Point(drawingToolStrip.Width, fileToolStrip.Height);
 
             _imageBuffer = null;
-            if (_drawing != null)
-                _drawing.IsDirty = true;
+            _forceRedraw = true;
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            _drawing.RemoveSelectedTree();
+            CommandFactory.Instance.Create("remove").Execute();
         }
     }
 }

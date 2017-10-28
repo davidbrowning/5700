@@ -16,6 +16,7 @@ namespace Forests
 
         private readonly TreeFactory _factory;
         private Drawing _drawing;
+        private bool _forceRedraw;
         private string _currentTreeResource;
         private float _currentScale = 1;
 
@@ -63,14 +64,15 @@ namespace Forests
                 _panelGraphics = drawingPanel.CreateGraphics();
             }
 
-            if (_drawing.Draw(_imageBufferGraphics))
+            if (_drawing.Draw(_imageBufferGraphics, _forceRedraw))
                 _panelGraphics.DrawImageUnscaled(_imageBuffer, 0, 0);
+
+            _forceRedraw = false;
         }
 
         private void newButton_Click(object sender, EventArgs e)
         {
             _drawing = new Drawing() {Factory = _factory};
-            DisplayDrawing();
         }
 
         private void ClearOtherSelectedTools(ToolStripButton ignoreItem)
@@ -113,6 +115,7 @@ namespace Forests
             else
                 _currentTreeResource = string.Empty;
 
+            _drawing.DeselectAll();
             _mode = (_currentTreeResource != string.Empty) ? PossibleModes.TreeDrawing : PossibleModes.None;
         }
 
@@ -142,7 +145,7 @@ namespace Forests
             }
             else if (_mode == PossibleModes.Selection)
             {
-                _drawing.SelectTreeAtPosition(e.Location);
+                _drawing.ToggleSelectionAtPosition(e.Location);
             }
         }
 
@@ -154,13 +157,10 @@ namespace Forests
 
         private float ConvertToFloat(string text, float min, float max, float defaultValue)
         {
-            float result = defaultValue;
+            var result = defaultValue;
             if (!string.IsNullOrWhiteSpace(text))
             {
-                if (!float.TryParse(text, out result))
-                    result = defaultValue;
-                else
-                    result = Math.Max(min, Math.Min(max, result));
+                result = !float.TryParse(text, out result) ? defaultValue : Math.Max(min, Math.Min(max, result));
             }
             return result;
         }
@@ -185,7 +185,6 @@ namespace Forests
             {
                 _drawing.Clear();
                 _drawing.Load(dialog.FileName);
-                DisplayDrawing();
             }
         }
 
@@ -218,13 +217,12 @@ namespace Forests
             drawingPanel.Location = new Point(drawingToolStrip.Width, fileToolStrip.Height);
 
             _imageBuffer = null;
-            if (_drawing != null)
-                _drawing.IsDirty = true;
+            _forceRedraw = true;
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            _drawing.RemoveSelectedTree();
+            _drawing.DeleteAllSelected();
         }
     }
 }
