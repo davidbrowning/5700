@@ -17,9 +17,11 @@ namespace MyRaceMonitor
         [STAThread]
         static void Main(string[] args)
         {
-            new Thread(new ThreadStart(ShowControlForm)).Start();
+            //new Thread(new ThreadStart(ShowControlForm)).Start();
+            int distance = int.Parse(args[1]);
+            Thread thread = new Thread(() => ShowControlForm(distance));
+            thread.Start();
             SimulatorController controller = new SimulatorController();
-            int distance = 0;
             if (args.Length == 2)
             {
                 try
@@ -32,7 +34,6 @@ namespace MyRaceMonitor
                     {
                         controller.Run("../../../SimulationData/Century Simulation-01.csv");
                     }
-                    distance = int.Parse(args[1]);
                 }
                 catch
                 {
@@ -44,10 +45,11 @@ namespace MyRaceMonitor
                 help();
             }
         }
-        public static void ShowControlForm()
+        public static void ShowControlForm(int distance)
         {
             GuiLayer.ControlForm f1 = new GuiLayer.ControlForm();
             f1.Show();
+            f1.RaceDistance = distance;
             Application.Run();
         }
         public static void help()

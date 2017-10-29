@@ -6,7 +6,7 @@ namespace AppLayer.Command
 {
     public class DeselectAllCommand : Command
     {
-        private List<Tree> _selectedTrees; 
+        private List<Component> _selectedTrees; 
         internal DeselectAllCommand() { }
 
         public override bool Execute()

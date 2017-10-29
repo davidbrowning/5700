@@ -5,7 +5,7 @@ namespace AppLayer.Command
 {
     public class RemoveSelectedCommand : Command
     {
-        private List<Tree> _deletedTrees; 
+        private List<Component> _deletedTrees; 
         internal RemoveSelectedCommand() { }
 
         public override bool Execute()
@@ -27,7 +27,7 @@ namespace AppLayer.Command
             if (_deletedTrees == null || _deletedTrees.Count == 0) return;
 
             foreach (var tree in _deletedTrees)
-                TargetDrawing?.DeleteTree(tree);
+                TargetDrawing?.DeleteComponent(tree);
         }
     }
 }

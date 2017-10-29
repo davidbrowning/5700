@@ -7,7 +7,7 @@ namespace AppLayer.Command
     public class LoadCommand : Command
     {
         private readonly string _filename;
-        private List<Tree> _previousTrees;
+        private List<Component> _previousTrees;
 
         internal LoadCommand() { }
         internal LoadCommand(params object[] commandParameters)
@@ -18,7 +18,7 @@ namespace AppLayer.Command
 
         public override bool Execute()
         {
-            _previousTrees = TargetDrawing.GetCloneOfTrees();
+            _previousTrees = TargetDrawing.GetCloneOfComponents();
             TargetDrawing?.Clear();
 
             StreamReader reader = new StreamReader(_filename);

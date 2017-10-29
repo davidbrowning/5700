@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forests", "Forests\Forests.csproj", "{BFB39AE5-8714-49FE-866F-85EBA9C17987}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UML", "Forests\UML.csproj", "{BFB39AE5-8714-49FE-866F-85EBA9C17987}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppLayer", "AppLayer\AppLayer.csproj", "{78CB0893-0D76-432E-9750-E15176EA7F91}"
 EndProject
@@ -24,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE75DC04-19D3-473E-A874-8B878C260F43}
 	EndGlobalSection
 EndGlobal

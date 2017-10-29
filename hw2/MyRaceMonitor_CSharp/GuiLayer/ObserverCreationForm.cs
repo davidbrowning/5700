@@ -19,7 +19,10 @@ namespace GuiLayer
             InitializeComponent();
         }
         public string ObserverTitle = "Title";
-
+        public string ObserverType
+        {
+            get { return (ListViewRadioButton.Checked) ? "L" : "G"; }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             this.DialogResult = System.Windows.Forms.DialogResult.OK;

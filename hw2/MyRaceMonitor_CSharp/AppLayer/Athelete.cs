@@ -20,6 +20,10 @@ namespace AppLayer
             this.Gender = rp.Gender;
             this.raceStatus = rp.UpdateType;
         }
+        public DateTime StartTime { get; set; }
+        public DateTime FinishTime { get; set; }
+        public double Location { get; set; }
+
         public int BibNumber { get; set; }
 
         internal void Unsubscribe(Observer observer)

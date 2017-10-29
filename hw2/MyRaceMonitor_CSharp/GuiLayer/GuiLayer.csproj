@@ -90,6 +90,9 @@
     <EmbeddedResource Include="ControlForm.resx">
       <DependentUpon>ControlForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GraphicDisplay.resx">
+      <DependentUpon>GraphicDisplay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListDisplay.resx">
       <DependentUpon>ListDisplay.cs</DependentUpon>
     </EmbeddedResource>

@@ -55,11 +55,11 @@
     <Compile Include="Command\SelectCommand.cs" />
     <Compile Include="Command\UndoCommand.cs" />
     <Compile Include="DrawingComponents\Drawing.cs" />
-    <Compile Include="DrawingComponents\Tree.cs" />
-    <Compile Include="DrawingComponents\TreeExtrinsicState.cs" />
-    <Compile Include="DrawingComponents\TreeFactory.cs" />
-    <Compile Include="DrawingComponents\TreeWithAllState.cs" />
-    <Compile Include="DrawingComponents\TreeWithIntrinsicState.cs" />
+    <Compile Include="DrawingComponents\Component.cs" />
+    <Compile Include="DrawingComponents\ComponentExtrinsicState.cs" />
+    <Compile Include="DrawingComponents\ComponentFactory.cs" />
+    <Compile Include="DrawingComponents\ComponentWithAllState.cs" />
+    <Compile Include="DrawingComponents\ComponentWithIntrinsicState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

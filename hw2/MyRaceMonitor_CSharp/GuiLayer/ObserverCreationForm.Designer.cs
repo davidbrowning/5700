@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.G = new System.Windows.Forms.RadioButton();
             this.ListViewRadioButton = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -36,6 +37,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.G);
             this.groupBox1.Controls.Add(this.ListViewRadioButton);
             this.groupBox1.Location = new System.Drawing.Point(24, 30);
             this.groupBox1.Name = "groupBox1";
@@ -43,6 +45,17 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Observer Type";
+            // 
+            // G
+            // 
+            this.G.AutoSize = true;
+            this.G.Location = new System.Drawing.Point(358, 48);
+            this.G.Name = "G";
+            this.G.Size = new System.Drawing.Size(108, 21);
+            this.G.TabIndex = 1;
+            this.G.TabStop = true;
+            this.G.Text = "GraphicView";
+            this.G.UseVisualStyleBackColor = true;
             // 
             // ListViewRadioButton
             // 
@@ -85,5 +98,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton ListViewRadioButton;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton G;
     }
 }

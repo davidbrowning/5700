@@ -12,7 +12,7 @@ namespace AppLayer.Command
         private readonly string _treeType;
         private Point _location;
         private readonly float _scale;
-        private Tree _treeAdded;
+        private Component _treeAdded;
         internal AddCommand() { }
 
         /// <summary>
@@ -50,13 +50,13 @@ namespace AppLayer.Command
             };
             var treeLocation = new Point(_location.X - treeSize.Width / 2, _location.Y - treeSize.Height / 2);
 
-            var extrinsicState = new TreeExtrinsicState()
+            var extrinsicState = new ComponentExtrinsicState()
             {
-                TreeType = _treeType,
+                ComponentType = _treeType,
                 Location = treeLocation,
                 Size = treeSize
             };
-            _treeAdded = TreeFactory.Instance.GetTree(extrinsicState);
+            _treeAdded = ComponentFactory.Instance.GetComponents(extrinsicState);
             TargetDrawing.Add(_treeAdded);
 
             return true;
@@ -64,7 +64,7 @@ namespace AppLayer.Command
 
         internal override void Undo()
         {
-            TargetDrawing.DeleteTree(_treeAdded);
+            TargetDrawing.DeleteComponent(_treeAdded);
         }
 
         internal override void Redo()

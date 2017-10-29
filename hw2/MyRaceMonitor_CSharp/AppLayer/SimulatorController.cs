@@ -17,7 +17,7 @@ namespace AppLayer
             };
 
             // To speed up testing
-            _simluatedData.SleepTimeForSimulatedSecond = 100;
+            _simluatedData.SleepTimeForSimulatedSecond = 200;
             _simluatedData.Start();
 
             // Let the simulator run for 3 minutes

@@ -10,24 +10,24 @@ namespace AppLayer.DrawingComponents
 
     public class Drawing
     {
-        private static readonly DataContractJsonSerializer JsonSerializer = new DataContractJsonSerializer(typeof(List<TreeExtrinsicState>));
+        private static readonly DataContractJsonSerializer JsonSerializer = new DataContractJsonSerializer(typeof(List<ComponentExtrinsicState>));
 
-        private readonly List<Tree> _trees = new List<Tree>();
+        private readonly List<Component> _components = new List<Component>();
         private readonly object _myLock = new object();
 
         public bool IsDirty { get; set; } = true;
 
-        public List<Tree> GetCloneOfTrees()
+        public List<Component> GetCloneOfComponents()
         {
-            var cloneList = new List<Tree>();
-            var extrinsicStates = new List<TreeExtrinsicState>();
+            var cloneList = new List<Component>();
+            var extrinsicStates = new List<ComponentExtrinsicState>();
             lock (_myLock)
             {
-                extrinsicStates.AddRange(_trees.OfType<TreeWithAllState>().Select(t => t.ExtrinsicStatic));
+                extrinsicStates.AddRange(_components.OfType<ComponentWithAllState>().Select(t => t.ExtrinsicStatic));
                 foreach (var extrinsicState in extrinsicStates)
                 {
-                    Tree tree = TreeFactory.Instance.GetTree(extrinsicState);
-                    cloneList.Add(tree);
+                    Component component = ComponentFactory.Instance.GetComponents(extrinsicState);
+                    cloneList.Add(component);
                 }
             }
 
@@ -38,22 +38,22 @@ namespace AppLayer.DrawingComponents
         {
             lock (_myLock)
             {
-                _trees.Clear();
+                _components.Clear();
                 IsDirty = true;
             }
         }
 
         public void LoadFromStream(Stream stream)
         {
-            var extrinsicStates = JsonSerializer.ReadObject(stream) as List<TreeExtrinsicState>;
+            var extrinsicStates = JsonSerializer.ReadObject(stream) as List<ComponentExtrinsicState>;
             if (extrinsicStates == null) return;
 
             lock (_myLock)
             {
                 foreach (var extrinsicState in extrinsicStates)
                 {
-                    Tree tree = TreeFactory.Instance.GetTree(extrinsicState);
-                    _trees.Add(tree);
+                    Component tree = ComponentFactory.Instance.GetComponents(extrinsicState);
+                    _components.Add(tree);
                 }
                 IsDirty = true;
             }
@@ -61,53 +61,53 @@ namespace AppLayer.DrawingComponents
 
         public void SaveToStream(Stream stream)
         {
-            var extrinsicStates = new List<TreeExtrinsicState>();
+            var extrinsicStates = new List<ComponentExtrinsicState>();
             lock (_myLock)
             {
-                extrinsicStates.AddRange(_trees.OfType<TreeWithAllState>().Select(t => t.ExtrinsicStatic));
+                extrinsicStates.AddRange(_components.OfType<ComponentWithAllState>().Select(t => t.ExtrinsicStatic));
             }
             JsonSerializer.WriteObject(stream, extrinsicStates);
         }
 
-        public void Add(Tree tree)
+        public void Add(Component tree)
         {
             if (tree == null) return;
 
             lock (_myLock)
             {
-                _trees.Add(tree);
+                _components.Add(tree);
                 IsDirty = true;
             }
         }
 
-        public List<Tree> DeleteAllSelected()
+        public List<Component> DeleteAllSelected()
         {
-            List<Tree> treesToDelete;
+            List<Component> componentsToDelete;
             lock (_myLock)
             {
-                treesToDelete = _trees.FindAll(t => t.IsSelected);
-                _trees.RemoveAll(t => t.IsSelected);
+                componentsToDelete = _components.FindAll(t => t.IsSelected);
+                _components.RemoveAll(t => t.IsSelected);
                 IsDirty = true;
             }
 
-            return treesToDelete;
+            return componentsToDelete;
         }
 
-        public void DeleteTree(Tree tree)
+        public void DeleteComponent(Component component)
         {
             lock (_myLock)
             {
-                _trees.Remove(tree);
+                _components.Remove(component);
                 IsDirty = true;
             }
         }
 
-        public Tree FindTreeAtPosition(Point location)
+        public Component FindTreeAtPosition(Point location)
         {
-            Tree result;
+            Component result;
             lock (_myLock)
             {
-                result = _trees.FindLast(t => location.X >= t.Location.X &&
+                result = _components.FindLast(t => location.X >= t.Location.X &&
                                               location.X < t.Location.X + t.Size.Width &&
                                               location.Y >= t.Location.Y &&
                                               location.Y < t.Location.Y + t.Size.Height);
@@ -115,22 +115,22 @@ namespace AppLayer.DrawingComponents
             return result;
         }
 
-        public List<Tree> DeselectAll()
+        public List<Component> DeselectAll()
         {
-            var selectedTrees = new List<Tree>();
+            var selectedComponents = new List<Component>();
             lock (_myLock)
             {
-                foreach (var t in _trees)
+                foreach (var t in _components)
                 {
                     if (t.IsSelected)
                     {
-                        selectedTrees.Add(t);
+                        selectedComponents.Add(t);
                         t.IsSelected = false;
                     }
                 }
                 IsDirty = true;
             }
-            return selectedTrees;
+            return selectedComponents;
         }
 
         public bool Draw(Graphics graphics, bool redrawEvenIfNotDirty = false)
@@ -140,7 +140,7 @@ namespace AppLayer.DrawingComponents
                 if (!IsDirty && !redrawEvenIfNotDirty) return false;
 
                 graphics.Clear(Color.White);
-                foreach (var t in _trees)
+                foreach (var t in _components)
                     t.Draw(graphics);
                 IsDirty = false;
             }

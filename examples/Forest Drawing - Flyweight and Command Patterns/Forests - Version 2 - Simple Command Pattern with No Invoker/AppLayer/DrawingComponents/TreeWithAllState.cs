@@ -43,25 +43,28 @@ namespace AppLayer.DrawingComponents
         {
             if (graphics == null || IntrinsicState?.Image == null) return;
 
-            graphics.DrawImage(IntrinsicState.Image,
+            /*graphics.DrawImage(IntrinsicState.Image,
                 new Rectangle(ExtrinsicStatic.Location.X, ExtrinsicStatic.Location.Y, ExtrinsicStatic.Size.Width, ExtrinsicStatic.Size.Height),
                 0, 0, IntrinsicState.Image.Width, IntrinsicState.Image.Height,
-                GraphicsUnit.Pixel);
+                GraphicsUnit.Pixel);*/
 
-            if (ExtrinsicStatic.IsSelected)
-            {
-                graphics.DrawRectangle(
-                    SelectedPen,
-                    ExtrinsicStatic.Location.X,
-                    ExtrinsicStatic.Location.Y,
-                    ExtrinsicStatic.Size.Width,
-                    ExtrinsicStatic.Size.Height);
+            
+                graphics.DrawRectangle(SelectedPen, ExtrinsicStatic.Location.X, ExtrinsicStatic.Location.Y, ExtrinsicStatic.Size.Width, ExtrinsicStatic.Size.Height);
 
-                DrawActionHandle(graphics, ExtrinsicStatic.Location.X, ExtrinsicStatic.Location.Y);
-                DrawActionHandle(graphics, ExtrinsicStatic.Location.X + ExtrinsicStatic.Size.Width, ExtrinsicStatic.Location.Y);
-                DrawActionHandle(graphics, ExtrinsicStatic.Location.X, ExtrinsicStatic.Location.Y + ExtrinsicStatic.Size.Height);
-                DrawActionHandle(graphics, ExtrinsicStatic.Location.X + ExtrinsicStatic.Size.Width, ExtrinsicStatic.Location.Y + ExtrinsicStatic.Size.Height);
-            }
+                if (ExtrinsicStatic.IsSelected)
+                {
+                    graphics.DrawRectangle(
+                        SelectedPen,
+                        ExtrinsicStatic.Location.X,
+                        ExtrinsicStatic.Location.Y,
+                        ExtrinsicStatic.Size.Width,
+                        ExtrinsicStatic.Size.Height);
+
+                    DrawActionHandle(graphics, ExtrinsicStatic.Location.X, ExtrinsicStatic.Location.Y);
+                    DrawActionHandle(graphics, ExtrinsicStatic.Location.X + ExtrinsicStatic.Size.Width, ExtrinsicStatic.Location.Y);
+                    DrawActionHandle(graphics, ExtrinsicStatic.Location.X, ExtrinsicStatic.Location.Y + ExtrinsicStatic.Size.Height);
+                    DrawActionHandle(graphics, ExtrinsicStatic.Location.X + ExtrinsicStatic.Size.Width, ExtrinsicStatic.Location.Y + ExtrinsicStatic.Size.Height);
+                }
         }
 
         private void DrawActionHandle(Graphics graphics, int x, int y)

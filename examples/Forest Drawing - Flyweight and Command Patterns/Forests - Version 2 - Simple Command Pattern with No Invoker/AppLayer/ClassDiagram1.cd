@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AppLayer.Command.AddCommand" Collapsed="true">
+    <Position X="1" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAgAAAAAAAAAAAAAAEACAAAAACACA=</HashCode>
+      <FileName>Command\AddCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppLayer.Command.Command" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\Command.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppLayer.Command.CommandFactory">
+    <Position X="17" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAQAAAAAAAAAEAAAEAAQAAAAAAAAAA=</HashCode>
+      <FileName>Command\CommandFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppLayer.Command.DeselectAllCommand" Collapsed="true">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\DeselectAllCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppLayer.Command.LoadCommand" Collapsed="true">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\LoadCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppLayer.Command.NewCommand" Collapsed="true">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\NewCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppLayer.Command.RemoveSelectedCommand" Collapsed="true">
+    <Position X="10" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\RemoveSelectedCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppLayer.Command.SaveCommand" Collapsed="true">
+    <Position X="14.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\SaveCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppLayer.Command.SelectCommand" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Command\SelectCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppLayer.DrawingComponents.Drawing">
+    <Position X="18.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAABCABAwgAAAACQAAAACAAIAAAAEABIABAAAA=</HashCode>
+      <FileName>DrawingComponents\Drawing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppLayer.DrawingComponents.Tree" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAkgAAABIIAAAAAAABAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>DrawingComponents\Tree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppLayer.DrawingComponents.TreeExtrinsicState">
+    <Position X="13.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAkAAAAAIAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DrawingComponents\TreeExtrinsicState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppLayer.DrawingComponents.TreeFactory">
+    <Position X="15.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAEAAAAAAAAAAAAAAAAAAAgAGAAAAAAQAAAAAAIAAA=</HashCode>
+      <FileName>DrawingComponents\TreeFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppLayer.DrawingComponents.TreeWithAllState" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAkgAAAAIABAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>DrawingComponents\TreeWithAllState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppLayer.DrawingComponents.TreeWithIntrinsicState" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAkgAAAAIAQAAAAAAAIBAAAAABAAAAAAA=</HashCode>
+      <FileName>DrawingComponents\TreeWithIntrinsicState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

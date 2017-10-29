@@ -34,8 +34,8 @@ namespace Forests
         {
             InitializeComponent();
 
-            TreeFactory.Instance.ResourceNamePattern = @"Forests.Graphics.{0}.png";
-            TreeFactory.Instance.ReferenceType = typeof(Program);
+            ComponentFactory.Instance.ResourceNamePattern = @"Forests.Graphics.{0}.png";
+            ComponentFactory.Instance.ReferenceType = typeof(Program);
 
             _drawing = new Drawing();
             CommandFactory.Instance.TargetDrawing = _drawing;
@@ -216,6 +216,16 @@ namespace Forests
         private void redoButton_Click(object sender, EventArgs e)
         {
             _invoker.Redo();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void drawingPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

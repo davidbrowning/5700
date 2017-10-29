@@ -10,10 +10,11 @@ namespace AppLayer
     public class AthleteObserver : Form
     {
         //private readonly Dictionary<int, Athlete> _AthletesBeingObserved = new Dictionary<int, Athlete>();
-        private readonly Dictionary<int, Athlete> _AthletesBeingObserved = new Dictionary<int, Athlete>();
+        public readonly Dictionary<int, Athlete> _AthletesBeingObserved = new Dictionary<int, Athlete>();
         protected bool RepaintNeeded = false;
         private readonly Timer _refreshTester = new Timer();
         private readonly object _myLock = new object();
+        public int RaceDistance;
 
         public int RefreshFrequency { get; set; }
         public string Title { get; set; }
@@ -54,6 +55,11 @@ namespace AppLayer
                     RepaintNeeded = false;
                 }
             }
+        }
+
+        public void callRefreshDisplay()
+        {
+            RefreshDisplay();
         }
 
         protected virtual void RefreshDisplay() { }

@@ -5,12 +5,12 @@ namespace AppLayer.Command
 {
     public class NewCommand : Command
     {
-        private List<Tree> _previousTrees; 
+        private List<Component> _previousTrees; 
         internal NewCommand() {}
 
         public override bool Execute()
         {
-            _previousTrees = TargetDrawing.GetCloneOfTrees();
+            _previousTrees = TargetDrawing.GetCloneOfComponents();
             TargetDrawing?.Clear();
             return _previousTrees != null && _previousTrees.Count > 0;
         }

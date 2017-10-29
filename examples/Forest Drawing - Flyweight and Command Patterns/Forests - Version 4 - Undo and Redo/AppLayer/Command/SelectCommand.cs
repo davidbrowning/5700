@@ -6,7 +6,7 @@ namespace AppLayer.Command
     public class SelectCommand : Command
     {
         private readonly Point _location;
-        private Tree _tree;
+        private Component _tree;
         private bool _originalState;
          
         internal SelectCommand(params object[] commandParameters)

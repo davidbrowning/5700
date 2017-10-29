@@ -14,6 +14,7 @@ namespace GuiLayer
 {
     public partial class ControlForm : Form
     {
+        public int RaceDistance;
         private readonly List<AthleteObserver> _knownDisplays = new List<AthleteObserver>();
         private AthleteObserver _selectedObserver = new AthleteObserver();
         public ControlForm()
@@ -72,12 +73,14 @@ namespace GuiLayer
         {
             if(_selectedObserver != null)
             {
+                _selectedObserver.RaceDistance = RaceDistance;
                 foreach(ListViewItem item in athletelv.SelectedItems)
                 {
                     Subject subject = item.Tag as Subject;
                     subject?.Subscribe(_selectedObserver);
                 }
             }
+            RefreshAthleteLists();
         }
 
         private void unsubscribe_button_click(object sender, EventArgs e)
@@ -88,6 +91,9 @@ namespace GuiLayer
                 {
                     Subject subject = item.Tag as Subject;
                     subject?.Unsubscribe(_selectedObserver);
+                    Athlete a = item.Tag as Athlete;
+                    _selectedObserver._AthletesBeingObserved.Remove(a.BibNumber);
+                    _selectedObserver.callRefreshDisplay();
                 }
                 RefreshAthleteLists();
             }
@@ -95,9 +101,9 @@ namespace GuiLayer
 
         private void observerlv_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (athletelv.SelectedIndices.Count == 1)
+            if (observerlv.SelectedIndices.Count == 1)
             {
-                _selectedObserver = _knownDisplays[athletelv.SelectedIndices[0]];
+                _selectedObserver = _knownDisplays[observerlv.SelectedIndices[0]];
                 unsubscribe_button.Enabled = true;
                 subscribe_button.Enabled = true;
             }
@@ -127,10 +133,20 @@ namespace GuiLayer
             if(modalDialogForm.ShowDialog() == DialogResult.OK)
             {
                 AthleteObserver observer;
-                observer = new ListDisplay();
-                observer.Title = "List Display";
-                _knownDisplays.Add(observer);
-                observer.Show();
+                if(modalDialogForm.ObserverType == "L")
+                {
+                    observer = new ListDisplay();
+                    observer.Title = "List Display";
+                    _knownDisplays.Add(observer);
+                    observer.Show();
+                }
+                if(modalDialogForm.ObserverType == "G")
+                {
+                    observer = new GraphicDisplay();
+                    observer.Title = "Graphic Display";
+                    _knownDisplays.Add(observer);
+                    observer.Show();
+                }
 
                 _selectedObserver = null;
                 observerlv.SelectedIndices.Clear();

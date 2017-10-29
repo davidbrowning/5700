@@ -16,28 +16,29 @@ namespace GuiLayer
         public ListDisplay()
         {
             InitializeComponent();
+            StartRefreshTimer();
         }
         protected override void RefreshDisplay()
         {
-                MessageBox.Show("Refreshing List Observer...", "Some title", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //This function is never entered
             athleteListView.Items.Clear();
-            foreach (Athlete athlete in ObservedAthletes.GetInstance().GetList())
+            foreach (Athlete athlete in this.AthletesBeingObserved)
             {
-                ListViewItem item = new ListViewItem(new []
+                ListViewItem item = new ListViewItem(new[]
                                                 {
+                                                    athlete.BibNumber.ToString(),
+                                                    athlete.raceStatus.ToString(),
                                                     athlete.FirstName.ToString(),
                                                     athlete.LastName.ToString(),
-                                                    athlete.BibNumber.ToString(),
+                                                    athlete.Location.ToString(),
+                                                    athlete.StartTime.TimeOfDay.ToString(),
+                                                    athlete.FinishTime.TimeOfDay.ToString(),
                                                 });
                 athleteListView.Items.Add(item);
             }
         }
-        private void ListDisplay_Load(object sender, EventArgs e)
+        public void callRefreshDisplay()
         {
-            Text = Title;
-            StartRefreshTimer();
+            RefreshDisplay();
         }
     }
 }
