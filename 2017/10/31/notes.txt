@@ -1,0 +1,7 @@
+
+in order to draw stuff, change the "mode" that the user is in. 
+e.g. treeDrawing mode. (might have lineDrawing, selection, or labelDrawing mode).
+
+only care about mouse down in certain modes. 
+
+ mouse down and mouse up may switch the "mode". 

@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Runtime.Serialization;
 
 namespace AppLayer.DrawingComponents
 {
@@ -8,11 +9,22 @@ namespace AppLayer.DrawingComponents
     /// Objects of this class only need to exist for short period time, like a drawing session.
     /// 
     /// For the decorator pattern, this class is a Decorator.  It add the extrinsic state to TreeWithIntrinsic State objects
+<<<<<<< HEAD:examples/Forest Drawing - Flyweight and Command Patterns/Forests - Version 4 - Undo and Redo/AppLayer/DrawingComponents/ComponentWithAllState.cs
     /// </summary>
     public class ComponentWithAllState : Component
     {
         internal ComponentWithIntrinsicState IntrinsicState { get; }
         public ComponentExtrinsicState ExtrinsicStatic { get; }
+=======
+    /// </summary
+    [DataContract]
+    public class TreeWithAllState : Tree
+    {
+        internal TreeWithIntrinsicState IntrinsicState { get; }
+
+        [DataMember]
+        public TreeExtrinsicState ExtrinsicStatic { get; set; }
+>>>>>>> 883e0355e2e7d796800a66f2e050eb4a2fb20b5a:examples/Forest Drawing - Flyweight and Command Patterns/Forests - Version 4 - Undo and Redo/AppLayer/DrawingComponents/TreeWithAllState.cs
 
         internal ComponentWithAllState(ComponentWithIntrinsicState sharedPart, ComponentExtrinsicState nonsharedPart)
         {

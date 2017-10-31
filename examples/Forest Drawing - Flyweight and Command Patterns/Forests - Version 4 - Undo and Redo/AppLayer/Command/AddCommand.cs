@@ -9,10 +9,10 @@ namespace AppLayer.Command
         private const int NormalWidth = 80;
         private const int NormalHeight = 80;
 
-        private readonly string _treeType;
+        private readonly string _componentType;
         private Point _location;
         private readonly float _scale;
-        private Component _treeAdded;
+        private Component _componentAdded;
         internal AddCommand() { }
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace AppLayer.Command
         internal AddCommand(params object[] commandParameters)
         {
             if (commandParameters.Length>0)
-                _treeType = commandParameters[0] as string;
+                _componentType = commandParameters[0] as string;
 
             if (commandParameters.Length > 1)
                 _location = (Point) commandParameters[1];
@@ -41,7 +41,7 @@ namespace AppLayer.Command
 
         public override bool Execute()
         {
-            if (string.IsNullOrWhiteSpace(_treeType) || TargetDrawing==null) return false;
+            if (string.IsNullOrWhiteSpace(_componentType) || TargetDrawing==null) return false;
 
             var treeSize = new Size()
             {
@@ -52,24 +52,24 @@ namespace AppLayer.Command
 
             var extrinsicState = new ComponentExtrinsicState()
             {
-                ComponentType = _treeType,
+                ComponentType = _componentType,
                 Location = treeLocation,
                 Size = treeSize
             };
-            _treeAdded = ComponentFactory.Instance.GetComponents(extrinsicState);
-            TargetDrawing.Add(_treeAdded);
+            _componentAdded = ComponentFactory.Instance.GetComponents(extrinsicState);
+            TargetDrawing.Add(_componentAdded);
 
             return true;
         }
 
         internal override void Undo()
         {
-            TargetDrawing.DeleteComponent(_treeAdded);
+            TargetDrawing.DeleteComponent(_componentAdded);
         }
 
         internal override void Redo()
         {
-            TargetDrawing.Add(_treeAdded);
+            TargetDrawing.Add(_componentAdded);
         }
     }
 }

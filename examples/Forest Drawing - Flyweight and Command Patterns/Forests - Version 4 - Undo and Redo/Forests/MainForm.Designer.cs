@@ -226,11 +226,11 @@
             this.tree01Button.AutoSize = false;
             this.tree01Button.CheckOnClick = true;
             this.tree01Button.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tree01Button.Image = ((System.Drawing.Image)(resources.GetObject("tree01Button.Image")));
+            this.tree01Button.Image = ((System.Drawing.Image)(resources.GetObject("class01Button.Image")));
             this.tree01Button.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tree01Button.Name = "tree01Button";
+            this.tree01Button.Name = "class01Button";
             this.tree01Button.Size = new System.Drawing.Size(61, 61);
-            this.tree01Button.Text = "Tree-01";
+            this.tree01Button.Text = "Class-01";
             this.tree01Button.Click += new System.EventHandler(this.treeButton_Click);
             // 
             // tree02Button

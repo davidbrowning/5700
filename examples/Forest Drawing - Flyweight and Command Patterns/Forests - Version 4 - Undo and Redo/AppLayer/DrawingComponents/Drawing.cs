@@ -10,7 +10,12 @@ namespace AppLayer.DrawingComponents
 
     public class Drawing
     {
+<<<<<<< HEAD
         private static readonly DataContractJsonSerializer JsonSerializer = new DataContractJsonSerializer(typeof(List<ComponentExtrinsicState>));
+=======
+        private static readonly DataContractJsonSerializer JsonSerializer =
+                new DataContractJsonSerializer(typeof(List<Tree>), new [] { typeof(Tree), typeof(TreeWithAllState), typeof(TreeExtrinsicState) });
+>>>>>>> 883e0355e2e7d796800a66f2e050eb4a2fb20b5a
 
         private readonly List<Component> _components = new List<Component>();
         private readonly object _myLock = new object();
@@ -45,15 +50,31 @@ namespace AppLayer.DrawingComponents
 
         public void LoadFromStream(Stream stream)
         {
+<<<<<<< HEAD
             var extrinsicStates = JsonSerializer.ReadObject(stream) as List<ComponentExtrinsicState>;
             if (extrinsicStates == null) return;
+=======
+            var loadedTrees = JsonSerializer.ReadObject(stream) as List<Tree>;
+
+            if (loadedTrees == null || loadedTrees.Count == 0) return;
+>>>>>>> 883e0355e2e7d796800a66f2e050eb4a2fb20b5a
 
             lock (_myLock)
             {
-                foreach (var extrinsicState in extrinsicStates)
+                // Since only the extrinsic state is saved, recreate the full tree objects
+                foreach (var partialTree in loadedTrees)
                 {
+<<<<<<< HEAD
                     Component tree = ComponentFactory.Instance.GetComponents(extrinsicState);
                     _components.Add(tree);
+=======
+                    TreeWithAllState tmpTree = partialTree as TreeWithAllState;
+                    if (tmpTree != null)
+                    {
+                        Tree fullTree = TreeFactory.Instance.GetTree(tmpTree.ExtrinsicStatic);
+                        _trees.Add(fullTree);
+                    }
+>>>>>>> 883e0355e2e7d796800a66f2e050eb4a2fb20b5a
                 }
                 IsDirty = true;
             }
@@ -61,12 +82,17 @@ namespace AppLayer.DrawingComponents
 
         public void SaveToStream(Stream stream)
         {
+<<<<<<< HEAD
             var extrinsicStates = new List<ComponentExtrinsicState>();
             lock (_myLock)
             {
                 extrinsicStates.AddRange(_components.OfType<ComponentWithAllState>().Select(t => t.ExtrinsicStatic));
+=======
+            lock (_myLock)
+            {
+                JsonSerializer.WriteObject(stream, _trees);
+>>>>>>> 883e0355e2e7d796800a66f2e050eb4a2fb20b5a
             }
-            JsonSerializer.WriteObject(stream, extrinsicStates);
         }
 
         public void Add(Component tree)

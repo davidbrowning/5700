@@ -103,6 +103,7 @@
     <Content Include="Graphics\Open.png" />
     <Content Include="Graphics\Save.png" />
     <Content Include="Graphics\Tree-08.jpg" />
+    <None Include="Resources\class01.bmp" />
     <EmbeddedResource Include="Graphics\Tree-08.png" />
     <None Include="Resources\tree08Button.Image.bmp" />
   </ItemGroup>
