@@ -5,3 +5,33 @@ e.g. treeDrawing mode. (might have lineDrawing, selection, or labelDrawing mode)
 only care about mouse down in certain modes. 
 
  mouse down and mouse up may switch the "mode". 
+
+fundamental theorum of testing: test every line of code. 
+ test case examples: given a function f that takes a string s,
+  f(string s); 
+ need to come up with a subset of interesting paramaters: 
+  e.g. s = null
+  s = "really long"
+  s = "other odd strings"
+
+ test all branches/paths through the code: 
+  if(s!= null & s.contains "string") 
+  // if this line were in f(), write a test to hit each case (s == null, s != null, s.contains "string", s.!contains "string)
+
+thought experiment: 
+ think about how you fill up the gas tank in a car. 
+  1. pull up to pump where pump is on the opposite side of the car's input, and pump is relatively lined up to car input. 
+  2. get out of car
+  3. move towards pay station
+  4. follow instructions on pay station (generally last instruction is to choose fuel grade)
+  5. open car input
+  6. insert pump
+  7. pull and lock trigger. 
+  (we talked about this idea, and how each persons' "fill car w/gas" algorithm varied slightly.)
+
+For making templates:
+ Figure out where the algorithms are the same, 
+ Figure out where they are different. 
+
+Go find the "Simple Financial Planning Program" sheet (should be on canvas). 
+
