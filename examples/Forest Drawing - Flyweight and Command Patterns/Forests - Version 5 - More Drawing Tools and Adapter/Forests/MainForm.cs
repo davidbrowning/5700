@@ -331,7 +331,7 @@ namespace Forests
         {
             return drawingPanel.PointToScreen(
                         new Point(drawingPanel.ClientRectangle.Left + location.X,
-                        ClientRectangle.Top + location.Y));
+                        drawingPanel.ClientRectangle.Top + location.Y));
         }
     }
 }
