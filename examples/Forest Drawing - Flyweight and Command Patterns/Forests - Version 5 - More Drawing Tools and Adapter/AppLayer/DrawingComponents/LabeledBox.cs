@@ -32,7 +32,7 @@ namespace AppLayer.DrawingComponents
 
         public override Element Clone()
         {
-            return new LabeledBox() {Corner = Corner, Size = Size};
+            return new LabeledBox() {Corner = Corner, Size = Size, Label = Label};
         }
 
         public override void Draw(Graphics graphics)
