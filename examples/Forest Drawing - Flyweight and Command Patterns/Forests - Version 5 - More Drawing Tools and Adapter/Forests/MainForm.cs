@@ -133,9 +133,9 @@ namespace Forests
                     {
                         var form = new LabelBoxForm
                         {
-                            Location =
-                                new Point(drawingPanel.ClientRectangle.Left + e.Location.X,
-                                    drawingPanel.ClientRectangle.Top + e.Location.Y)
+                            DesktopLocation = 
+                                new Point(ClientRectangle.Left + e.Location.X,
+                                    ClientRectangle.Top + e.Location.Y)
                         };
 
                         if (form.ShowDialog() == DialogResult.OK)
