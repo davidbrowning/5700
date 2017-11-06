@@ -12,6 +12,7 @@ namespace AppLayer.Command
 
         private readonly string _relationshipType;
         private Point _location;
+        private Point _startingPoint;
         private readonly float _scale;
         private Element _relationshipAdded;
         internal AddRelationshipCommand() { }
@@ -38,6 +39,10 @@ namespace AppLayer.Command
                 _scale = (float) commandParameters[2];
             else
                 _scale = 1.0F;
+            if(commandParameters.Length > 3)
+            {
+                _startingPoint = (Point)commandParameters[3];
+            }
         }
 
         public override bool Execute()
@@ -49,17 +54,18 @@ namespace AppLayer.Command
                 Width = Convert.ToInt16(Math.Round(NormalWidth * _scale, 0)),
                 Height = Convert.ToInt16(Math.Round(NormalHeight * _scale, 0))
             };
-            var relationshipLocation = new Point(_location.X - relationshipSize.Width / 2, _location.Y - relationshipSize.Height / 2);
+            //var relationshipLocation = new Point(_location.X - relationshipSize.Width / 2, _location.Y - relationshipSize.Height / 2);
+            var relationshipLocation = new Point(_location.X, _location.Y);
+            var relationshipStartingPoint = new Point(_startingPoint.X,_startingPoint.Y);
 
             var extrinsicState = new RelationshipExtrinsicState()
             {
                 RelationshipType = _relationshipType,
                 Location = relationshipLocation,
+                StartingPoint = relationshipStartingPoint,
                 Size = relationshipSize
             };
             _relationshipAdded = RelationshipFactory.Instance.GetRelationship(extrinsicState);
-            //this works V
-            //           ^^
             TargetDrawing.Add(_relationshipAdded);
 
             return true;

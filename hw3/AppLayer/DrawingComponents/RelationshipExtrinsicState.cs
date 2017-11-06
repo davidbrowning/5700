@@ -13,6 +13,8 @@ namespace AppLayer.DrawingComponents
 
         [DataMember]
         public Point Location { get; set; }
+        [DataMember]
+        public Point StartingPoint { get; set; }
 
         [DataMember]
         public Size Size { get; set; }
@@ -27,6 +29,7 @@ namespace AppLayer.DrawingComponents
                 RelationshipType = RelationshipType,
                 Location = Location,
                 Size = Size,
+                StartingPoint = StartingPoint,
                 IsSelected = IsSelected,
                 SelectedPen = SelectedPen
             };

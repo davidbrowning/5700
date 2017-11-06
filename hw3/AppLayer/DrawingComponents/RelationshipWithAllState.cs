@@ -32,10 +32,21 @@ namespace AppLayer.DrawingComponents
             set { ExtrinsicState.IsSelected = value;  }
         }
 
+        public override Pen SelectedPen
+        {
+            get { return ExtrinsicState.SelectedPen; }
+            set { ExtrinsicState.SelectedPen = value; }
+        }
+
         public override Point Location
         {
             get { return ExtrinsicState.Location; }
             set { ExtrinsicState.Location = value; }
+        }
+        public override Point StartingPoint
+        {
+            get { return ExtrinsicState.StartingPoint; }
+            set { ExtrinsicState.StartingPoint = value; }
         }
 
 
@@ -57,7 +68,10 @@ namespace AppLayer.DrawingComponents
 
             //new Rectangle(ExtrinsicState.Location.X, ExtrinsicState.Location.Y, ExtrinsicState.Size.Width,
             //   ExtrinsicState.Size.Height);
-            graphics.DrawArc(SelectedPen, new Rectangle(10, 10, 100, 100), 0, 360);
+            Point p = new Point(Location.X+100, Location.Y);
+            graphics.DrawLine(IntrinsicState.SelectedPen,StartingPoint, Location);
+            //graphics.DrawArc(IntrinsicState.SelectedPen, new Rectangle(Location.X, Location.Y, 100, 100), 0, 360);
+
 
             if (ExtrinsicState.IsSelected)
             {

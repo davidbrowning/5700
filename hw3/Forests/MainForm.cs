@@ -156,7 +156,7 @@ namespace Forests
                     break;
                 case PossibleModes.RelationshipDrawing:
                     if (!string.IsNullOrWhiteSpace(_currentRelationshipResource))
-                        CommandFactory.Instance.CreateAndDo("addrelationship", _currentRelationshipResource, e.Location, _currentScale);
+                        CommandFactory.Instance.CreateAndDo("addrelationship", _currentRelationshipResource, e.Location, _currentScale, _startingPoint);
                     break;
                 case PossibleModes.Selection:
                     CommandFactory.Instance.CreateAndDo("select", e.Location);
@@ -270,7 +270,7 @@ namespace Forests
 
         private void drawingPanel_MouseDown(object sender, MouseEventArgs e)
         {
-            if (_mode != PossibleModes.BoxDrawing && _mode != PossibleModes.LineDrawing) return;
+            if (_mode != PossibleModes.BoxDrawing && _mode != PossibleModes.LineDrawing && _mode != PossibleModes.RelationshipDrawing) return;
 
             _startingPoint = e.Location;
             _rubberBandStart = ComputeAbsolutePoint(e.Location);          
