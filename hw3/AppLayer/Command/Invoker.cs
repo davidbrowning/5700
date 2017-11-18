@@ -35,13 +35,15 @@ namespace AppLayer.Command
             _keepGoing = false;
         }
 
-        public void EnqueueCommandForExecution(Command cmd)
+        public bool EnqueueCommandForExecution(Command cmd)
         {
             if (cmd != null)
             {
                 _todoQueue.Enqueue(cmd);
                 _enqueueOccurred.Set();
+                return true;
             }
+            return false;
         }
 
         public void Undo()

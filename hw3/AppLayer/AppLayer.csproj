@@ -61,7 +61,7 @@
     <Compile Include="DrawingComponents\Element.cs" />
     <Compile Include="DrawingComponents\GraphicsWithSelection.cs" />
     <Compile Include="DrawingComponents\IGraphicsWithSelection.cs" />
-    <Compile Include="DrawingComponents\LabeledBox.cs" />
+    <Compile Include="DrawingComponents\ClassBox.cs" />
     <Compile Include="DrawingComponents\Line.cs" />
     <Compile Include="DrawingComponents\Relationship.cs" />
     <Compile Include="DrawingComponents\RelationshipExtrinsicState.cs" />
