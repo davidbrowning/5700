@@ -11,7 +11,7 @@ namespace AppLayer.DrawingComponents
     public class Drawing
     {
         private static readonly DataContractJsonSerializer JsonSerializer =
-                new DataContractJsonSerializer(typeof(List<Element>), new [] { typeof(Element), typeof(Tree), typeof(TreeWithAllState), typeof(TreeExtrinsicState) });
+                new DataContractJsonSerializer(typeof(List<Element>), new [] { typeof(Element), typeof(Tree), typeof(TreeWithAllState), typeof(TreeExtrinsicState), typeof(LabeledBox), typeof(Line) });
 
         private readonly List<Element> _elements = new List<Element>();
         private readonly object _myLock = new object();

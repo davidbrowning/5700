@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expressions", "Expressions\Expressions.csproj", "{AF59AFF6-7E60-4924-A897-819B52F16B0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressionsTesting", "ExpressionsTesting\ExpressionsTesting.csproj", "{A641A6DB-C1A3-42B9-8002-10AC6D2B8710}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF59AFF6-7E60-4924-A897-819B52F16B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF59AFF6-7E60-4924-A897-819B52F16B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF59AFF6-7E60-4924-A897-819B52F16B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF59AFF6-7E60-4924-A897-819B52F16B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A641A6DB-C1A3-42B9-8002-10AC6D2B8710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A641A6DB-C1A3-42B9-8002-10AC6D2B8710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A641A6DB-C1A3-42B9-8002-10AC6D2B8710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A641A6DB-C1A3-42B9-8002-10AC6D2B8710}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

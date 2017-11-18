@@ -1,5 +1,4 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Runtime.Serialization;
 
 namespace AppLayer.DrawingComponents
@@ -28,28 +27,27 @@ namespace AppLayer.DrawingComponents
         }
 
         public override bool IsSelected {
-            get { return ExtrinsicState.IsSelected;  }
-            set { ExtrinsicState.IsSelected = value;  }
+            get { return ExtrinsicState?.IsSelected ?? false;  }
+            set { if (ExtrinsicState!=null) ExtrinsicState.IsSelected = value;  }
         }
 
         public override Point Location
         {
-            get { return ExtrinsicState.Location; }
-            set { ExtrinsicState.Location = value; }
+            get { return ExtrinsicState?.Location ?? new Point(0,0) ; }
+            set { if (ExtrinsicState != null) ExtrinsicState.Location = value; }
         }
 
 
         public override Size Size
         {
-            get { return ExtrinsicState.Size; }
-            set { ExtrinsicState.Size = value; }
+            get { return ExtrinsicState?.Size ?? new Size(0,0); }
+            set { if (ExtrinsicState != null) ExtrinsicState.Size = value; }
         }
 
         public override Element Clone()
         {
             return new TreeWithAllState(IntrinsicState, ExtrinsicState = ExtrinsicState.Clone());
         }
-
 
         public override void Draw(Graphics graphics)
         {
