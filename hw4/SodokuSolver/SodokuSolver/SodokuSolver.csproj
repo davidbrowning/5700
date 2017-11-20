@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{72C6E432-5486-4C79-A74A-6259CB9D4B2A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SodokuSolver</RootNamespace>
+    <AssemblyName>SodokuSolver</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PlainText.cs" />
+    <Compile Include="Puzzle.cs" />
+    <Compile Include="Serializer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\In\Puzzle-16x16-0001.txt" />
+    <Content Include="Data\In\Puzzle-16x16-0002.txt" />
+    <Content Include="Data\In\Puzzle-16x16-0101.txt" />
+    <Content Include="Data\In\Puzzle-16x16-0102.txt" />
+    <Content Include="Data\In\Puzzle-16x16-0201.txt" />
+    <Content Include="Data\In\Puzzle-16x16-0301.txt" />
+    <Content Include="Data\In\Puzzle-16x16-0401.txt" />
+    <Content Include="Data\In\Puzzle-16x16-0901.txt" />
+    <Content Include="Data\In\Puzzle-16x16-0902.txt" />
+    <Content Include="Data\In\Puzzle-25x25-0101.txt" />
+    <Content Include="Data\In\Puzzle-25x25-0901.txt" />
+    <Content Include="Data\In\Puzzle-25x25-0902.txt" />
+    <Content Include="Data\In\Puzzle-25x25-0903.txt" />
+    <Content Include="Data\In\Puzzle-25x25-0904.txt" />
+    <Content Include="Data\In\Puzzle-4x4-0001 - Copy.txt" />
+    <Content Include="Data\In\Puzzle-4x4-0001.txt" />
+    <Content Include="Data\In\Puzzle-4x4-0002.txt" />
+    <Content Include="Data\In\Puzzle-4x4-0101.txt" />
+    <Content Include="Data\In\Puzzle-4x4-0201.txt" />
+    <Content Include="Data\In\Puzzle-4x4-0901.txt" />
+    <Content Include="Data\In\Puzzle-4x4-0902.txt" />
+    <Content Include="Data\In\Puzzle-4x4-0903.txt" />
+    <Content Include="Data\In\Puzzle-4x4-0904.txt" />
+    <Content Include="Data\In\Puzzle-4x4-0905.txt" />
+    <Content Include="Data\In\Puzzle-4x4-0906.txt" />
+    <Content Include="Data\In\Puzzle-4x4-0907.txt" />
+    <Content Include="Data\In\Puzzle-9x9-0001.txt" />
+    <Content Include="Data\In\Puzzle-9x9-0002.txt" />
+    <Content Include="Data\In\Puzzle-9x9-0101.txt" />
+    <Content Include="Data\In\Puzzle-9x9-0102.txt" />
+    <Content Include="Data\In\Puzzle-9x9-0103.txt" />
+    <Content Include="Data\In\Puzzle-9x9-0201.txt" />
+    <Content Include="Data\In\Puzzle-9x9-0202.txt" />
+    <Content Include="Data\In\Puzzle-9x9-0203.txt" />
+    <Content Include="Data\In\Puzzle-9x9-0204.txt" />
+    <Content Include="Data\In\Puzzle-9x9-0205.txt" />
+    <Content Include="Data\In\Puzzle-9x9-0206.txt" />
+    <Content Include="Data\In\Puzzle-9x9-0301.txt" />
+    <Content Include="Data\In\Puzzle-9x9-0302.txt" />
+    <Content Include="Data\In\Puzzle-9x9-0401.txt" />
+    <Content Include="Data\In\Puzzle-9x9-0901.txt" />
+    <Content Include="Data\Out\Puzzle-16x16-0001.txt" />
+    <Content Include="Data\Out\Puzzle-16x16-0101.txt" />
+    <Content Include="Data\Out\Puzzle-16x16-0102.txt" />
+    <Content Include="Data\Out\Puzzle-16x16-0201.txt" />
+    <Content Include="Data\Out\Puzzle-16x16-0301.txt" />
+    <Content Include="Data\Out\Puzzle-16x16-0901.txt" />
+    <Content Include="Data\Out\Puzzle-16x16-0902.txt" />
+    <Content Include="Data\Out\Puzzle-25x25-0101.txt" />
+    <Content Include="Data\Out\Puzzle-25x25-0901.txt" />
+    <Content Include="Data\Out\Puzzle-25x25-0904.txt" />
+    <Content Include="Data\Out\Puzzle-4x4-0001.txt" />
+    <Content Include="Data\Out\Puzzle-4x4-0002.txt" />
+    <Content Include="Data\Out\Puzzle-4x4-0101.txt" />
+    <Content Include="Data\Out\Puzzle-4x4-0201.txt" />
+    <Content Include="Data\Out\Puzzle-4x4-0901.txt" />
+    <Content Include="Data\Out\Puzzle-4x4-0902.txt" />
+    <Content Include="Data\Out\Puzzle-4x4-0903.txt" />
+    <Content Include="Data\Out\Puzzle-4x4-0904.txt" />
+    <Content Include="Data\Out\Puzzle-4x4-0905.txt" />
+    <Content Include="Data\Out\Puzzle-4x4-0906.txt" />
+    <Content Include="Data\Out\Puzzle-4x4-0907.txt" />
+    <Content Include="Data\Out\Puzzle-9x9-0001.txt" />
+    <Content Include="Data\Out\Puzzle-9x9-0002.txt" />
+    <Content Include="Data\Out\Puzzle-9x9-0101.txt" />
+    <Content Include="Data\Out\Puzzle-9x9-0102.txt" />
+    <Content Include="Data\Out\Puzzle-9x9-0103.txt" />
+    <Content Include="Data\Out\Puzzle-9x9-0201.txt" />
+    <Content Include="Data\Out\Puzzle-9x9-0202.txt" />
+    <Content Include="Data\Out\Puzzle-9x9-0203.txt" />
+    <Content Include="Data\Out\Puzzle-9x9-0204.txt" />
+    <Content Include="Data\Out\Puzzle-9x9-0205.txt" />
+    <Content Include="Data\Out\Puzzle-9x9-0206.txt" />
+    <Content Include="Data\Out\Puzzle-9x9-0301.txt" />
+    <Content Include="Data\Out\Puzzle-9x9-0302.txt" />
+    <Content Include="Data\Out\Puzzle-9x9-0401.txt" />
+    <Content Include="TextFile1.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
