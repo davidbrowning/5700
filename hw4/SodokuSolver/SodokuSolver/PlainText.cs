@@ -16,7 +16,6 @@ namespace SodokuSolver
                 Console.WriteLine(line);
             }
             return;
-
         }
         public char delimiter { get; set; }
         public PlainText()
@@ -31,8 +30,6 @@ namespace SodokuSolver
 
         public override bool Read(Puzzle puzzle, string filename)
         {
-            Console.WriteLine("Warning: PlainText was specified without a delimiter." +
-                " Assuming space");
             if (!System.IO.File.Exists(filename))
             {
                 throw new System.IO.FileNotFoundException();
@@ -68,24 +65,20 @@ namespace SodokuSolver
                     foreach (var character in line.Split(delimiter))
                     {
                         matrix[row, col] = character;
-#if DEBUG
                         Console.Write('(' + row.ToString() + ',' + col.ToString() + "): "
                             + matrix[row, col].ToString() + " | ");
-#else
-                    Console.Write(matrix[row,col].ToString() + " | ");
-#endif
                         col += 1;
                     }
-                    index += 1;
-                    Console.Write("\n");
-                    row += 1;
                     if(col != size)
                     {
                         Console.WriteLine("COLUMN != SIZE");
                         Bad_puzzle(lines);
                         return false;
                     }
+                    index += 1;
+                    row += 1;
                     col = 0;
+                    Console.Write("\n");
                 }
             }
             catch
@@ -95,7 +88,7 @@ namespace SodokuSolver
             }
             
             puzzle.size = size;
-            puzzle.symbol_set = ss;
+            puzzle.Symbol_Set = ss;
             puzzle.Board = matrix;
             return true;
         }

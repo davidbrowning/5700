@@ -26,6 +26,7 @@ namespace SodokuSolver
             if (d.ContainsKey("--infile")) {Console.WriteLine("Input File: " + d["--infile"]);d.Add("-i", d["--infile"]); }
             if (d.ContainsKey("-o")) { Console.WriteLine("Output File: "+d["-o"]); }
             if (d.ContainsKey("--outfile")) { Console.WriteLine("Output File: "+d["--outfile"]);d.Add("-o", d["--outfile"]); }
+            if (!d.ContainsKey("-i")) { Console.WriteLine("No Input File"); write_help(); return false; }
             return true;
         }
         static Dictionary<string, string> Parse_args(string[] s)
@@ -76,13 +77,22 @@ namespace SodokuSolver
             Serializer s = new PlainText();
             if(!s.Read(p, fn))
             {
-                Console.WriteLine("Bad Puzzle Detected, Cannot Solve");
+                Console.WriteLine("Bad Puzzle Detected, Cannot Read Puzzle");
                 Failure();
                 return;
             }
-            if (p.IsSolved())
+            Console.Write(p.ToString());
+            p.Animate = true;
+            OnlyPossibility op = new OnlyPossibility();
+            var success = op.SolvePuzzle(p);
+            if (success)
             {
-                Console.WriteLine("Job's Done, Puzzle is solved, let's go home");
+                Console.Write(p.ToString());
+                Console.WriteLine("Puzzle Solved!");
+            }
+            else
+            {
+                Console.WriteLine("Puzzle Not Solved");
             }
             Console.Read();
             return;
