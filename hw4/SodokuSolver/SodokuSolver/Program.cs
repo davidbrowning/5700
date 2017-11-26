@@ -82,9 +82,13 @@ namespace SodokuSolver
                 return;
             }
             Console.Write(p.ToString());
-            p.Animate = true;
+            //p.Animate = true;
             OnlyPossibility op = new OnlyPossibility();
+            OnlyPlace oPlace = new OnlyPlace();
+            Twins twins = new Twins();
             var success = op.SolvePuzzle(p);
+            //var success = oPlace.SolvePuzzle(p);
+            //var success = twins.SolvePuzzle(p);
             if (success)
             {
                 Console.Write(p.ToString());
@@ -92,6 +96,7 @@ namespace SodokuSolver
             }
             else
             {
+                Console.Write(p.ToString());
                 Console.WriteLine("Puzzle Not Solved");
             }
             Console.Read();

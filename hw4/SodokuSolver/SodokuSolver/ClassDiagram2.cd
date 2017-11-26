@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SodokuSolver.OnlyPlace" Collapsed="true">
+    <Position X="1.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>OnlyPlace.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SodokuSolver.OnlyPossibility" Collapsed="true">
+    <Position X="3.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>OnlyPossibility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SodokuSolver.PlainText" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAgAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>PlainText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SodokuSolver.Program" Collapsed="true">
+    <Position X="5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAABAAACAg=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SodokuSolver.Puzzle">
+    <Position X="7.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIEAIIAAAAAAABEAIBAAAQCAAAAAgAAAAAAQDBAACA=</HashCode>
+      <FileName>Puzzle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SodokuSolver.Serializer" Collapsed="true">
+    <Position X="2" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAQgAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Serializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SodokuSolver.Solver">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAACAAAAAAAAAgAAAIAAAAAAAAA=</HashCode>
+      <FileName>Solver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SodokuSolver.Twins" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Twins.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

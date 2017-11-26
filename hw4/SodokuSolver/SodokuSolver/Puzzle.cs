@@ -64,6 +64,15 @@ namespace SodokuSolver
             }
             return false;
         }
+
+        public Tuple<int,int> Get_Block(Tuple<int,int> t)
+        {
+            var block_size = (int)Math.Sqrt(size);
+            int row_offset = (int)(Math.Floor((double)t.Item1 / block_size)); // e.g. in a 3x3 puzzle, row 5 would be in offset 1
+            int column_offset = (int)(Math.Floor((double)t.Item2 / block_size));
+            Tuple<int, int> block = new Tuple<int, int>((row_offset*block_size),(column_offset*block_size));
+            return block;
+        }
         public List<string> GetEmptyCellPossibilities(Tuple<int,int> t)
         {
             List<string> delete_these = new List<string>();

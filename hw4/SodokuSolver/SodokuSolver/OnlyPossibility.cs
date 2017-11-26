@@ -26,12 +26,6 @@ namespace SodokuSolver
                     {
                         p.Board[emptyCell.Item1, emptyCell.Item2] = possible[0];
                     }
-//                    Console.Write(emptyCell.Item1 + "," + emptyCell.Item2 + ": ");
-//                    foreach(var possibility in possible)
-//                    {
-//                        Console.Write(possibility + ",");
-//                    }
-//                    Console.WriteLine();
                 }
                 Empty_Cell_List_After = p.GetEmptyCells().Count();
                 if (p.Animate)
