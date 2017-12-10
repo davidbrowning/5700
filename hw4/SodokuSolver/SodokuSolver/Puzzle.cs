@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SodokuSolver
 {
-    public class Puzzle 
+    public class Puzzle : ICloneable
     {
 
         public List<Tuple<int,int>> GetEmptyCells()
@@ -193,6 +195,37 @@ namespace SodokuSolver
                 final += '\n';
             }
             return final;
+        }
+
+        public List<string> getStrings()
+        {
+            List<string> sl = new List<string>();
+            for (int i = 0; i < size; ++i)
+            {
+                string s = "";
+                s += "| ";
+                for (int j = 0; j < size; ++j)
+                {
+                    s += Board[i, j] + " | ";
+                }
+                sl.Add(s);
+            }
+            return sl;
+        }
+
+        public object Clone()
+        {
+            using (MemoryStream s = new MemoryStream())
+            {
+                if (this.GetType().IsSerializable)
+                {
+                    BinaryFormatter f = new BinaryFormatter();
+                    f.Serialize(s, this);
+                    s.Position = 0;
+                    return f.Deserialize(s);
+                }
+                return null;
+            }
         }
 
         public Puzzle()

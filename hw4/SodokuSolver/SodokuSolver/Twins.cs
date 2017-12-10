@@ -8,6 +8,10 @@ namespace SodokuSolver
 {
     class Twins : Solver
     {
+        public Twins()
+        {
+            Name = "Twins";
+        }
         // This was not implemented very well. 
         public void Eliminate_Twins(List<string> list, Tuple<int, int> cell, Puzzle p)
         {
@@ -58,11 +62,10 @@ namespace SodokuSolver
             }
         }
        
-        public override bool SolvePuzzle(Puzzle p)
+        public override bool Solve(Puzzle p)
         {
             //Twins is very similar to OnlyPossibility with the addition of 
             // further eliminating possibilities.
-            start_time();
             var Empty_Cell_List = p.GetEmptyCells();
             var Empty_Cell_List_Before = Empty_Cell_List.Count();
             var Empty_Cell_List_After = Empty_Cell_List_Before;
@@ -88,12 +91,16 @@ namespace SodokuSolver
                 }
             }
             while (Empty_Cell_List_Before > Empty_Cell_List_After);
-            stop_time();
             if(Empty_Cell_List_After > 0)
             {
                 return false;
             }
             return true;
+        }
+
+        public override bool Update_Puzzle(Puzzle p, int row, int col, string c, int block_size)
+        {
+            throw new NotImplementedException();
         }
     }
 }

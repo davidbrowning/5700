@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SodokuSolver
 {
-    class PlainText : Serializer
+    public class PlainText : Serializer
     {
         public void Bad_puzzle(string[] lines)
         {

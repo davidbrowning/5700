@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -135,6 +136,11 @@
     <Content Include="Data\Out\Puzzle-9x9-0302.txt" />
     <Content Include="Data\Out\Puzzle-9x9-0401.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\GuiLayer\GuiLayer.csproj">
+      <Project>{ccc21932-6bfd-434e-ae37-120ec8760529}</Project>
+      <Name>GuiLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

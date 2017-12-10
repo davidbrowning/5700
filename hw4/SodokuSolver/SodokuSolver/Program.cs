@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
+using System.Windows.Forms;
+using GuiLayer;
 
 namespace SodokuSolver
 {
@@ -63,6 +65,12 @@ namespace SodokuSolver
             Console.Read();
             return;
         }
+        static void ShowForm(GuiLayer.Form1 f)
+        {
+            f.Show();
+            f.Start_Loop();
+            Application.Run();
+        }
 
         static void Main(string[] args)
         {
@@ -75,6 +83,13 @@ namespace SodokuSolver
             string fn = arguments["-i"];
             Puzzle p = new Puzzle();
             Serializer s = new PlainText();
+            OnlyPossibility op = new OnlyPossibility();
+            OnlyPlace oPlace = new OnlyPlace();
+            Twins twins = new Twins();
+            List<Solver> SolverList = new List<Solver>();
+            SolverList.Add(op);
+            SolverList.Add(oPlace);
+            SolverList.Add(twins);
             if(!s.Read(p, fn))
             {
                 Console.WriteLine("Bad Puzzle Detected, Cannot Read Puzzle");
@@ -82,23 +97,30 @@ namespace SodokuSolver
                 return;
             }
             Console.Write(p.ToString());
-            //p.Animate = true;
-            OnlyPossibility op = new OnlyPossibility();
-            OnlyPlace oPlace = new OnlyPlace();
-            Twins twins = new Twins();
-            var success = op.SolvePuzzle(p);
-            //var success = oPlace.SolvePuzzle(p);
-            //var success = twins.SolvePuzzle(p);
-            if (success)
+            GuiLayer.Form1 f = new Form1();
+            Thread thread = new Thread(() => ShowForm(f));
+            thread.Start();
+            p.Animate = true;
+            foreach (var S in SolverList)
             {
-                Console.Write(p.ToString());
-                Console.WriteLine("Puzzle Solved!");
+                var success = S.SolvePuzzle(p);
+                Console.WriteLine(S.Name);
+                if (success)
+                {
+                    Console.WriteLine("Puzzle Solved!");
+                }
+                else
+                {
+                    Console.WriteLine("Puzzle Not Solved");
+                }
             }
-            else
+            Console.Write(p.ToString());
+            if(arguments["-o"] != null)
             {
-                Console.Write(p.ToString());
-                Console.WriteLine("Puzzle Not Solved");
+                string outfile = arguments["-o"];
+                System.IO.File.WriteAllLines(outfile, p.getStrings());
             }
+
             Console.Read();
             return;
         }

@@ -1,0 +1,119 @@
+"This pattern allows an object to alter its behavior when its internal state changes, causing the object to appear as if it alter its class membership, i.e., changed subclasses.",State
+"This pattern addresses situations where there are multiple ways of doing the same kind of thing, but with different kinds of input, output, or runtime characteristics and the choice of which way to do it has to be made at runtime",Strategy
+"This pattern should not be used an excuse to violate the ""no global variables"" rule.",Singleton
+An application of this pattern defines a high-level interface that can make a subsystem easier to use.,Façade
+"The solution for this pattern creates a multicast-style of communication (which may be method calls), where a sender object does not need to know about the specific receivers and there can be multiple receivers.",Observer
+This pattern is also called View-Model-Binder,MVVM
+This pattern is often used in conjuction with the Strategies pattern to leverage reuse amoung concrete strategies,Template Method
+"Select a creational pattern with class scope, i.e. a pattern who primary purpose is to create objects and whose solution relies primarily on inheritance.","Factory Method.  If you ignore the inheritence part, then also Factory Idiom."
+The pattern can address the problem of accessing remote object as if they were local and hide the true location of an object,Proxy
+This pattern is useful when an extension can result in an exponential explosion of subclasses.,Decorator
+"This pattern has the negative consequence that adding new kinds of product (i.e., classes) may be difficult, i.e., result in lots of changes to existing code",Abstract Factory
+Select a compound pattern,"MVC, MVP, MVVM"
+"With this pattern, it is easy to add new behaviors to a class of objects","State, Visitor, Decorator"
+"With this pattern, it is easy to extend a system with a new family of products that parallel existing families of product from a functional perspective.",Abstract Factory
+This pattern allows for the attachment of any combination of additional responsibilities to an object at run time.,Decorator
+"By itself, the pattern does not enforce encapsulation of components in a subsystem, but makes it easier to work with them.",Façade
+The solution of this pattern has the developer define the skeleton of an algorithm in a method and defer the specifics of some steps of that algorithm to subclasses.,Template Method
+"This pattern defines a readable and extensible way to perform operations over a collection of elements, without breaking the encapsulation of the collection or its elements.","Visitor, and to a lesser extent Iterator"
+Select a pattern that can be implemented with either object (delegation) or class scope (inheritance).,Adapter
+This pattern ensures that a class has only one instance.,Singleton
+"The solution proposed by this pattern is to extract  from a class (i.e., the context) certain behaviors that represent different algorithms for the same basic kind of operation and then encapsulate them in a hierarchy of classes, where each of concrete classes represents a different algorithm.",Strategy
+Consider using this pattern in any system that includes a collection of objects and you need to traverse through that collection,Iterator
+"This pattern allows algorithms to be selected at runtime, by defining a family of algorithms, encapsulating each algorithm, and making the algorithms interchangeable within that family.",Strategy
+"If generics are not available, then adding a new concrete element types can be hard for the solution of this pattern",Visitor
+This idea involves defining a method (typically a static method) that encapsulates the logic for constructing the right kind of object (typically from specializations of a the class that holds the static method.) ,Simply Factory Idiom
+"With the solution of this pattern, each product family is implemented in its own hierarchy.",Abstract Factory
+"This pattern is sometimes called the ""Action"" or ""Transaction"" pattern.",Command
+"With this pattern, developers can effectively change an otherwise unchangeable interface.",Adapter
+With this pattern it is easy to add new operations that operate on a complex object structure,Visitor
+This pattern is also known as a Wrapper.,"Adapter, Decorator"
+"This pattern combines the use of Strategy, Composite, and Observers to create three layers of software, but still results in some cyclic dependencies",MVC
+"This pattern is useful in any system where one layer of software needs to perform a specific set of actions on objects in another layer of software, particularly if those actions need to be asynchronous, logged, or undone.",Command
+"The solution of this pattern is used in the solution for the Decorator Pattern, but addresses a more generic problem.",Composite
+"This pattern can be used in multiple possible contexts, but the most common is graphical user interfaces, where multiple displays need to show state information about the same object(s).",Observer
+"A disadvantage of this pattern is that it might make the design overly general. Specifically, it might create a bloated interface for the base component and therefore, cause uncessary complexity in concrete components.",Composite
+This pattern provides a unified interface to a set of components in a subsystem that allows for easy and coordinated use of those components,Façade
+Select a pattern that is often used with Visitor,Iterator
+This pattern allows clients to treat aggregate objects and subpart objects uniformly.,Composite
+"This pattern is sometimes also called the  ""Policy Pattern""",Strategy
+"This is an architectural design pattern that prescribes three loosely coupled layers of software, connected via bindings",MVVM
+The pattern provides a surrogate placeholder for another objects for the purpose of controlling access to that object in some way.,Proxy
+This pattern localizes and encapsulates state-specific behavior for a class of objects,State
+"This idea can be used when a component needs to create an object, but doesn't directly need to know the type of object, as long as it adhers to an interface abstraction.",Simply Factory Idiom
+This pattern requires designers to separate intrinsic from extrinsic state for a class of objects.,Flyweight
+This pattern is useful when developing a class library or framework and when developers of specific applications need to customize how certain kinds of objects are created,Factory Method
+This pattern describes how to support a large number of objects that have common state information,Flyweight
+This pattern may help designers reduce the space required to manage a large number of objects.,Flyweight
+"A pattern, whose solution may result in a long delegationchain at runtime","Decorator, Composite"
+The solution to this pattern includes a base class or interface with methods for subscribing and unsubscribing,Observer
+"This pattern focuses on the formation of complex, recursive object structures",Composite
+"Use this pattern when you want to create a reusable class that coorperates with unrelated or unforeseen classes, that is, classes that don't necessarily have compatible interfaces.",Adapter
+Select one of the patterns or idioms that focus on creating an object,"Simply Factory, Factory Method, Abstract Factory"
+This pattern can simplified dependencies between objects when the notification of state changes are a primary concern,Observer
+"This pattern addresses the problem of how to encapsulate state-specific behavior as objects in a way that increases the cohesion and extensibility of X, without creating undue coupling",State
+"One of the participants in this pattern is a ""leaf"".",Composite
+This pattern can use defer the actual creation (or copying) of a complex object until it is needed.,Proxy
+"Select one of two patterns that have similar structure diagrams and rely on a recursive data structure to organize an open-ended number of objects.  They have distinct but complimentary intents, and are therefore often used in concert with each other.","Decorator, Composite"
+"This pattern defines an interface for creating an object, but lets subclasses decide which class to instantiate.",Factory Method
+"This pattern helps developers implement ""virtual constructors"".",Factory Method
+This pattern's solution includes an Invoker.,Command
+One of the negative consquences of this pattern is that clients may experience unexpectedly long delays when changing the state of a target object.,"Observer, Proxy, and possibly the Command if an Invoker is not used"
+"Select a pattern whose intend is to help with the development, testing, and maintenance of user interfaces.","MVC, MVP, MVVM"
+"This pattern is also known as ""surrogate"".",Proxy
+"This pattern has two variations, one called Supervising Controller and another called Passive View.",MVP
+Select one pattern that can make unit testing simplier.,"Any, except perhaps the singleton which can make automated testing harder in some frameworks"
+"Use this pattern when you want to use an existing class, but its interface does not match the one you need.",Adapter
+Select a pattern whose solution(s) rely only on inheritance.,"Template Method, Factory Method"
+This pattern lets subclasses redefine parts of an algorithm without changing the algorithm's structure.,Template Method
+"This pattern provides an interface for creating objects from families of parallel class hierarchies, particularly in the context of cross-platform development.",Abstract Factory
+"This pattern encapsulates actions, e.g., method calls, in  objects, creating opportunities to perform them asynchronously and to make them “undoable” and repeatable.",Command
+"Select a pattern that relies on delegation via aggregation but should not, on its own, result in long chains of delegation","Flyweight, Adapter (Object), Proxy"
+This patterns can be used to provide a global point of access to something like system-wide concrete factory.,Singleton
+"This pattern is useful when the system needs to be independent of how its products are created, composed, and represented and the class to instantiate has to be determined at runtime.",Prototype
+Select a pattern that can help create layers or subsystems that can be easily replaced or swapped out for some other implementation,"Proxy, Abstract Factory, Command, Adapter, and even Façade if there is no other couple to the layer or subsystem that doesn't go through the Façade"
+Select a pattern used as part of MVC,"Strategy, Composite, Observer"
+This pattern may have the negative consequence of producing a lot of small objects that all represent one realworld or problem domain object.,Decorator
+This pattern provides a way to access the elements of a collection sequentially without exposing the collection’s underlying implementation,Iterator
+"This pattern can be used to create ""smart references""",Proxy
+Select a pattern that you will apply to some project in the future.,Any
+"Events in C# are an implementation of this pattern, at least at a conceptual level.",Observer
+"Characterized by the statement ""Every object is an unique entity in the university, distinguished by its properties""",Object Identity
+Grouping objects together into sets based on common properties helps manage complexity.  We do this during analysis to better understand the problem and during design to help structure a solution.,Classification
+Identifying an individual design decision and then implementing that decision in one place.,Localization of Design Decisions
+The act of hiding or placing a decision decision inside appropriate software components.,Encapsulation
+"The act of summarizing or generalizing something to focus on the ideas that are most relevant to a purpose, or view of a complex thing that leaves out unnecesary details",Abstraction
+The manner and degree of interdependence between software components.  Less of this makes for more maintainable and reusable software.,Coupling
+The degree to which the elements of a component belong together.  More of this reduce complexity and increases maintainabiltiy and reusability.,Cohesion
+"Software components should be extensible, but not modifiable.",Open/Closed Principle
+Abstract components should not depend on detail components.,Dependency Inversion
+A process by which developers break up a system into cohesive and loosely coupled components.,Modularization
+"The degree to which a software system can be kept correct, reliable, and secure as it operating environment changes",Maintainability
+The degree to which the functionality of a system can be changed or expanded,Extensibility
+"The degree to which a component, library of components, or framework can be leveraged in other software systems",Reuse
+This practice is one way to achieve Localization of Design Decisions,Encapsulate What Varies
+"This practice can help understand the problem and problem domain better, as well as help formulate a solution, create a plan for developing the solution, and communicate with all stake holders",Conceptual Modeling
+This practice can help developers modularize software into loosing coupled layers of abstractions,"Organize Software into Loosely Coupled Layers, Conceptual Modeling"
+"Both aggregation and inheritance can be used to achieve reuse.  This practice recommends one over the over, when other considerations don't dictate one.",Prefer Aggregation Over Inheritance
+This practice can help developers reduce coupling by using interfaces and abstraction effectively,Program to an Interface or Abstraction
+The practice helps developers avoid the Uncommunitive ,Use Identifiers that Improve Readability and Maintainability
+Identifiers pitfall,
+This practice is critical to any software development effort and can help all stakeholders gain confidence in correctness of the software,Testing with Executable Unit Test Cases
+"Exists in a software, where design or implementation uses identifiers that don't accurately communicate what the component represent ",Uncommunitive Names
+Exists when the identifiers in the design or implementation do not follow any logical naming method or standard set of terminology,Inconsistent Names
+This pitfall exists when there are identifiers like ,Types Embedded in Names
+"""firstNameString"" or ""ageLabel"" where String and Label are data types.",
+Lack of cohesion in a method is a likely consequence of this pitfall ,Long Methods
+Developers can slip into this pitfall if they don't localize design decisions,Duplicate Code
+Inappropriate use of the decorator pattern may lead to this pitfall,Long Message Chains
+The decorate pattern an help avoid this pitfall,Class Explosion
+This pitfall exists when a class tries to do too much,Large Classes
+"Applying the decorator, strategy, template method or state pattern can often help extrication from this pitfall by reducing complex switch statement or if-then-else statement",Conditional Complexity
+"This pitfall may exist when there is similar block of code, but the blocks are not exactly the same",Oddbal Solution
+"This pitfall reduces the readability and maintainability of the code, but does not have a direct impact on the functionality or performance","Redundant or Meaningless Comments, Dead Code"
+This pitfall exists where there is an unused variable or a statement that is never executed,Dead Code
+"When developers over design or implement feature that are not needed, they are succumbing to this pitfall.",Speculative Generality
+This pitfall exists when a field (data member) is only set and used in a specific situation or context.,Temporary Field
+This pitfall exists when a derived class is really not a specialization (subset) of a base class,Refused Bequest
+"This pitfall exists when certain bad forms of coupling are present, namely when one class uses the internal fields or methods of another",Inappropriate Intimacy
+This pitfall exists when most of the logic of a method uses methods of another class.,Feature Envy

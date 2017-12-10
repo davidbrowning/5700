@@ -8,7 +8,11 @@ namespace SodokuSolver
 {
     class OnlyPlace : Solver
     {
-        public bool UpdatePuzzle(Puzzle p, int row, int col, string symbol, int block_size)
+        public OnlyPlace()
+        {
+            Name = "Only Place";
+        }
+        public override bool Update_Puzzle(Puzzle p, int row, int col, string symbol, int block_size)
         {
             bool puzzleUpdated = false;
             if (!p.in_block(row, col, symbol))
@@ -36,15 +40,14 @@ namespace SodokuSolver
                     {
                         p.Board[r, c] = symbol;
                         puzzleUpdated = true;
-                        Console.WriteLine("Updating p.Board[" + r + "," + c + "] = "+symbol);
+                        Console.WriteLine("Updating p.Board[" + r + "," + c + "] = "+c);
                     }
                 }
             }
             return puzzleUpdated;
         }
-        public override bool SolvePuzzle(Puzzle p)
+        public override bool Solve(Puzzle p)
         {
-            start_time();
             int updates = 0;
             do
             {
@@ -57,7 +60,7 @@ namespace SodokuSolver
                         for (int col = 0; col < p.size; col += block_size)
                         {
                             //triangulate from block perspective. 
-                            if (UpdatePuzzle(p, row, col, symbol, block_size))
+                            if (Update_Puzzle(p, row, col, symbol, block_size))
                             {
                                 updates += 1;
                             }
@@ -65,7 +68,6 @@ namespace SodokuSolver
                     }
                 }
             } while (updates > 0);
-            stop_time();
             if (p.IsSolved())
             {
                 return true;
